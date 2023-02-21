@@ -11,8 +11,10 @@ import { actionTypes } from "../../state/actionTypes";
 
 const Courses = () => {
   const [search, setSearch] = useState("");
+  // Get data from the global state
   const { state, dispatch } = useContext(CourseContext);
 
+  // Sort All Courses by AtoZ, ZtoA, PriceHighLow, PriceLowHigh
   const handleChange = (event) => {
     const selectedValue = event.target.value;
     dispatch({ type: actionTypes.SORTING_VALUE, payload: selectedValue });
@@ -20,8 +22,12 @@ const Courses = () => {
 
   return (
     <div style={{ background: "#EDF0F2" }}>
+      {/* Courses Page Headers */}
       <PagesHeader title="Courses" sub="Courses" />
+
       <Container>
+        {/* Search bar And Selection/Sorting Bar */}
+        {/* Search Bar */}
         <div className="d-flex flex-wrap justify-content-between mt-5 mb-2">
           <div className="d-flex items-center">
             <InputGroup className="mb-3 d-flex">
@@ -36,6 +42,8 @@ const Courses = () => {
               />
             </InputGroup>
           </div>
+
+          {/* Selection/ Sorting Bar */}
           <Form.Select
             id="mySelect"
             onChange={(event) => handleChange(event)}
@@ -49,31 +57,23 @@ const Courses = () => {
             <option value="ztoa">Course Title (z-a)</option>
           </Form.Select>
         </div>
+
+        {/* Courses Data loading Set Spinner/Loading */}
         {state.loading && <Loading />}
+
+        {/* Courses Data get from the global State */}
+        {/* Global state get courses data from the server */}
         <Row>
-          <Col md={3}>
-            <ul>
-              <li>Deve</li>
-              <li>desi</li>
-              <li>business</li>
-            </ul>
-          </Col>
-          <Col md={9}>
-            <Row>
-              {state.courses
-                ?.filter((course) => {
-                  if (search === "") return course;
-                  if (
-                    course.title.toLowerCase().includes(search.toLowerCase())
-                  ) {
-                    return course;
-                  }
-                })
-                .map((course) => (
-                  <Course key={course._id} course={course} />
-                ))}
-            </Row>
-          </Col>
+          {state.courses
+            ?.filter((course) => {
+              if (search === "") return course;
+              if (course.title.toLowerCase().includes(search.toLowerCase())) {
+                return course;
+              }
+            })
+            .map((course) => (
+              <Course key={course._id} course={course} />
+            ))}
         </Row>
       </Container>
     </div>

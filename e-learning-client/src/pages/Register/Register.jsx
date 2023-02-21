@@ -18,6 +18,7 @@ const Register = () => {
     reset
   } = useForm();
 
+  // Get form data and create user
   const handleRegisterSubmit = (data) => {
     const fullName = data.firstName + " " + data.lastName;
     registerUser(data.email, data.password)
@@ -39,6 +40,7 @@ const Register = () => {
     })
   };
 
+  // Save user Data in Database
   const saveUser = (name, email) =>{
     const user = {name, email};
     fetch('http://localhost:5000/users', {
@@ -56,7 +58,9 @@ const Register = () => {
 
   return (
     <div style={{ background: "#EDF0F2" }}>
+      {/* Login page Header */}
       <PagesHeader title="Student Registration" sub="Student Registration" />
+
       <Container>
         <Row>
           <div
@@ -71,6 +75,7 @@ const Register = () => {
                   borderRadius: "20px",
                 }}
               >
+                {/* Register Form data */}
                 <Form onSubmit={handleSubmit(handleRegisterSubmit)}>
                   <Form.Group className="mb-3" controlId="formBasicFirstName">
                     <Form.Label className="fw-bold">First Name</Form.Label>

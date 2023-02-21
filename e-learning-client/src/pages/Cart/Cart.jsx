@@ -12,9 +12,12 @@ const Cart = () => {
     <div style={{ padding: "0 0 50px 0" }}>
       <Container>
         <Row>
+          {/* Cart header & product information show */}
           <Col md={8} sm={8}>
             <h2 className="text-center my-3 fs-2 fw-bold">Shopping Cart</h2>
             <p>{state.cart.length} Courses in Cart</p>
+
+            {/* product show as a table */}
             {state.cart.length ? (
               <Table striped bordered hover responsive>
                 <thead>
@@ -63,6 +66,8 @@ const Cart = () => {
                   </tbody>
                 ))}
               </Table>
+
+              // If product are not in the cart then show empty box
             ) : (
               <div className="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 shadow p-4">
                 <Image src={emptyCart} alt="cart" style={{ width: "250px" }} />
@@ -80,6 +85,7 @@ const Cart = () => {
             )}
           </Col>
           <Col md={4}>
+            {/* Total cost and Add to cart */}
             <div className="bg-white mt-5 p-5 mb-4 shadow rounded">
               <h3>Total</h3>
               <h4>${state.subTotal}</h4>
@@ -92,6 +98,7 @@ const Cart = () => {
                 <Link className="text-white text-decoration-none fs-5" to="/dashboard">Checkout</Link>
               </Button>
               :
+              // when click the checkout then cart are empty and hit the reducer function and product send to dashboard
               <Button disabled
                 style={{ width: "100%", marginTop: "20px" }}
                 variant="primary"

@@ -12,11 +12,13 @@ const AddInstructor = () => {
   } = useForm();
   const imageHostingKey = process.env.REACT_APP_imgbb_key;
 
+  // Get all data in the form and send it to the database
   const handleInstructor = (data) =>{
     const image = data.img[0];
     const formData = new FormData();
     formData.append('image', image);
 
+    // Send image in the imgbb and get the image link
     const url = `https://api.imgbb.com/1/upload?&key=${imageHostingKey}`
     fetch(url, {
       method: 'POST',
@@ -24,6 +26,7 @@ const AddInstructor = () => {
     })
     .then(response => response.json())
     .then(imgData =>{
+      // took all data and create a object that send to the database
       if(imgData.success){
         const instructor = {
           name: data.name,
@@ -69,6 +72,7 @@ const AddInstructor = () => {
               }}
             >
               
+              {/* Instructor Form */}
               <Form onSubmit={handleSubmit(handleInstructor)}>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
                   <Form.Label className="fw-bold">Name</Form.Label>

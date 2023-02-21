@@ -6,6 +6,7 @@ import PagesHeader from "../../Components/PagesHeader/PagesHeader";
 import SingleInstructor from "../../Components/SingleInstructor/SingleInstructor";
 
 const Instructors = () => {
+  // Instructor Data fetching from the server
   const {data: instructors = [], isLoading} = useQuery({
     queryKey: ['instructors'],
     queryFn: async () => {
@@ -17,6 +18,7 @@ const Instructors = () => {
 
   return (
     <div className="my-5">
+      {/* Instructor page Header */}
         <PagesHeader title="Instructors" sub="Instructors" />
       <h2 className="fs-1 fw-bold text-center mb-4 mt-5">Our Expert Instructor</h2>
 
@@ -24,6 +26,7 @@ const Instructors = () => {
       {isLoading && (
           <Loading />
         )}
+        {/* Instructor data loading */}
         <Row>
           {instructors.map((instructor) => (
             <SingleInstructor key={instructor._id} instructor={instructor} />

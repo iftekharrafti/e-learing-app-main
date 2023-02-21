@@ -41,8 +41,13 @@ const About = () => {
   ];
   return (
     <div>
+      {/* About page Header Component */}
       <PagesHeader title="About Us" sub="About Us" />
+
+      {/* Our Best course component */}
       <BestCourse />
+
+      {/* Student Countup component  */}
       <div className="about"
         style={{
           background: `url(${bg})`
@@ -50,6 +55,8 @@ const About = () => {
       >
         <CounterUp />
       </div>
+
+      {/* Students component here */}
       <h2 className="fs-1 fw-bold text-center mt-5 mb-4">What Students Say?</h2>
       <Container>
         <Row>
@@ -58,7 +65,11 @@ const About = () => {
           ))}
         </Row>
       </Container>
+
+      {/* Platform component */}
       <Platform />
+
+      {/* Our expert instructors component */}
       <AboutExpertInstructor />
     </div>
   );

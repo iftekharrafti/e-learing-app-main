@@ -6,6 +6,7 @@ import background from "../../../assets/photos/bg.png";
 import Fade from "react-reveal/Fade";
 
 const Banner = () => {
+  // Banner Component
   return (
     <div
       style={{
@@ -16,6 +17,7 @@ const Banner = () => {
     >
       <Container>
         <Row className="align-items-center">
+          {/* Home Banner Left Side */}
           <Col sm={12} md={6} className="py-4 pe-4">
             <Fade left>
               <h4 className="fs-6 text-primary">
@@ -38,6 +40,7 @@ const Banner = () => {
             </Fade>
           </Col>
           <Col sm={12} md={6}>
+            {/* Home Banner Right Side Image */}
             <Fade right>
               <img className="img-fluid" src={banner} alt="" />
             </Fade>

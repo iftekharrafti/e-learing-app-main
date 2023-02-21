@@ -60,10 +60,13 @@ const Course = ({ course }) => {
     <Col md={4} sm={12} xs={12}>
       <Zoom>
         <div className="shadow mb-4 rounded" >
+          {/* Course Card are here */}
           <div style={{ position: "relative" }}>
+            {/* Course Image and pass the id are routes and singleCourseDetails */}
             <Link to={`/course/${_id}`}>
               <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" />
             </Link>
+            {/* Bookmark icon */}
             {bookmark ? (
               <button style={bookMark} onClick={handleBookmark} disabled>
                 <FontAwesomeIcon
@@ -80,6 +83,7 @@ const Course = ({ course }) => {
               </button>
             )}
           </div>
+          {/* Title Rating Price and others */}
           <div className="p-4">
             <Link
               to={`/course/${_id}`}
@@ -103,6 +107,8 @@ const Course = ({ course }) => {
             <hr />
             <div className="d-flex justify-content-between">
               <h5 className="text-primary">${price}</h5>
+
+              {/* Shopping cart are here */}
               {cart ? (
                 <Button
                   className="me-2"

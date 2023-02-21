@@ -12,7 +12,10 @@ const MyCourses = () => {
 
   return (
     <div className="shadow rounded" style={{ background: "#fff" }}>
+      {/* My Courses title */}
       <h2 className="fs-2 fw-bold text-center py-4">My courses</h2>
+
+      {/* if user checkout any product then show the product as a table */}
       {state.checkout.length ? (
         <Table striped bordered hover>
           <thead>
@@ -70,6 +73,7 @@ const MyCourses = () => {
           </tbody>
         </Table>
       ) : (
+        // // If product are not in the checkout then show empty box
         <div className="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 p-4">
           <Image src={emptyCart} alt="cart" className="img" />
           <p>Your chekout is empty. Keep shopping to find a course!</p>

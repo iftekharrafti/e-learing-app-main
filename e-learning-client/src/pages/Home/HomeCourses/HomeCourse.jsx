@@ -40,12 +40,14 @@ const HomeCourse = ({ course }) => {
     cursor: "pointer",
   };
 
+  // Bookmark icons handle
   const handleBookmark = () => {
     dispatch({ type: actionTypes.ADD_TO_BOOKMARK, payload: course });
     setBookmark(true);
     toast.success("Added To Bookmark");
   };
 
+  // Cart icons handle
   const handleCart = () => {
     dispatch({
       type: actionTypes.ADD_TO_CART,
@@ -60,6 +62,7 @@ const HomeCourse = ({ course }) => {
     <Col md={4} sm={12} xs={12}>
       <Zoom>
         <div className="shadow mb-4 rounded">
+          {/* Bookmark icons here */}
           <div style={{ position: "relative" }}>
             <Link to={`/course/${_id}`}>
               <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" />
@@ -81,6 +84,7 @@ const HomeCourse = ({ course }) => {
             )}
           </div>
           <div className="p-4">
+            {/* Title Rating Price information */}
             <Link
               to={`/course/${_id}`}
               style={{ color: "black", textDecoration: "none" }}
@@ -112,6 +116,8 @@ const HomeCourse = ({ course }) => {
                     color: "#377dff",
                   }}
                 >
+                  
+                  {/* Cart icons here */}
                   <Link to="/cart" className=" text-decoration-none">
                     <FontAwesomeIcon className="me-2" icon={faCartShopping} />
                     Go to cart

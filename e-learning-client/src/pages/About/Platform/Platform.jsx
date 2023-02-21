@@ -13,6 +13,7 @@ const Platform = () => {
         <Row className="align-items-center">
           <Col md={6} sm={12}>
             <Bounce left>
+              {/* Platform Image */}
               <Image
                 src={platform}
                 alt="about platform"
@@ -23,9 +24,11 @@ const Platform = () => {
           <Col md={6} sm={12}>
             <Bounce right>
               <div className="p-4">
+                {/* Platform Header */}
                 <h2 className="fs-1 fw-bold mb-4">
                   Best Online Learning platform
                 </h2>
+                {/* Platform High Quality Resources icon and details */}
                 <div className="d-flex align-items-center">
                   <Image
                     src={resource}
@@ -43,6 +46,7 @@ const Platform = () => {
                     </p>
                   </div>
                 </div>
+                {/* Platform Expert Instructor icon and details */}
                 <div className="d-flex align-items-center">
                   <Image
                     src={teacher}
@@ -58,6 +62,7 @@ const Platform = () => {
                     </p>
                   </div>
                 </div>
+                {/* Platform Dedicated support icon and details */}
                 <div className="d-flex align-items-center">
                   <Image
                     src={customerService}

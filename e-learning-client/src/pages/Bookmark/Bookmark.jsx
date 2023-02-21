@@ -10,8 +10,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Bookmark = () => {
+  // Get product from the global function
   const { state, dispatch } = useContext(CourseContext);
 
+  // When click addCart then goto reducer function and add cart to the state
   const handleCart = (course) => {
     dispatch({
       type: actionTypes.ADD_TO_CART,
@@ -30,8 +32,10 @@ const Bookmark = () => {
       <Container>
         <Row>
           <Col md={12} sm={12}>
+            {/* Bookmark header & product information show */}
             <h2 className="text-center my-3 fs-2 fw-bold">BookMark Product</h2>
             <p>{state.bookmark.length} Courses in Bookmark</p>
+            {/* product show as a table */}
             {state.bookmark.length ? (
               <Table
                 responsive
@@ -96,6 +100,7 @@ const Bookmark = () => {
                 ))}
               </Table>
             ) : (
+              // If product are not in the bookmark then show empty box
               <div className="d-flex flex-column justify-content-center align-items-center mt-2 mb-5 shadow p-4">
                 <Image src={emptyCart} alt="cart" style={{ width: "250px" }} />
                 <p>Your bookmark is empty. Keep shopping to find a course!</p>

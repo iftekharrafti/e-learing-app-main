@@ -20,9 +20,11 @@ import {
 
 function MainNavbar() {
   return (
+    // Main Navbar Component
     <Navbar collapseOnSelect expand="lg">
       <Container>
         <Navbar.Brand>
+          {/* Navbar logo */}
           <Link to="/">
             <Image className="logo" src={logo} alt="logo" />
           </Link>
@@ -32,6 +34,7 @@ function MainNavbar() {
           className="justify-content-end"
           id="responsive-navbar-nav"
         >
+          {/* Nav list */}
           <Nav>
             <Nav.Link>
               <Link className="text-black text-decoration-none" to="/">
@@ -72,7 +75,11 @@ function MainNavbar() {
               </Link>
             </Nav.Link>
           </Nav>
+
+          {/* Topbar contact and social media on Small screen */}
+
           <div className="mainTopNav">
+            {/* Contact Number & Email */}
             <div className="d-flex flex-wrap py-2 contact">
               <div className="d-flex align-items-center me-3">
                 <FontAwesomeIcon
@@ -90,6 +97,8 @@ function MainNavbar() {
                 <p className="m-0">Hello@gmail.com</p>
               </div>
             </div>
+            
+            {/* Social Media icons */}
             <div className="me-5">
               <a
                 className="me-2"

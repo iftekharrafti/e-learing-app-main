@@ -69,6 +69,7 @@ export const courseReducer = (state, action) => {
         sorting_value: action.payload
       }
 
+      // Sort all course
     case actionTypes.SORTING_COURSE:
       let newSortData;
       let tempSortCourse = [...action.payload]

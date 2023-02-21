@@ -24,11 +24,13 @@ const Contact = () => {
 
   return (
     <div style={{ background: "#F5F5F5" }}>
+      {/* Contact page Header */}
       <PagesHeader title="Contact Us" sub="Contact Us" />
 
       <div className="py-5">
         <Container>
           <Row>
+            {/* Contact page left side Email, contact and others */}
             <Col md={5} sm={12}>
               <div className="mb-4">
                 <h2 className="fs-2 mb-3">Have any Questions?</h2>
@@ -69,11 +71,13 @@ const Contact = () => {
               </div>
             </Col>
             <Col md={7} sm={12}>
+
+              {/* Contact form are here */}
               <div className="contactForm" style={{ background: "#ffffff" }}>
                 <Form onSubmit={handleSubmit(handleContactSubmit)}>
                   <div className="contactName">
                     <Form.Group
-                      className="mb-3 mr-3"
+                      className="contactInnerName mb-3 mr-3"
                       controlId="formBasicEmail"
                     >
                       <Form.Control
@@ -89,7 +93,7 @@ const Contact = () => {
                         </span>
                       )}
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                    <Form.Group className="contactInnerName mb-3" controlId="formBasicEmail">
                       <Form.Control
                       className="remove-focus"
                         size="lg"
@@ -167,6 +171,7 @@ const Contact = () => {
         </Container>
       </div>
       <div>
+        {/* Google map show */}
         <iframe
           title="presentMaps"
           className="px-2 pb-2"

@@ -9,6 +9,7 @@ import Loading from "../../../Components/Loading/Loading";
 import HomeCourse from "./HomeCourse";
 
 const HomeCourses = () => {
+  // Courses Data fetching from the server
   const { data: courses = [], isLoading } = useQuery({
     queryKey: ["courses"],
     queryFn: async () => {
@@ -21,15 +22,19 @@ const HomeCourses = () => {
 
   return (
     <div style={{ background: "#F5F5F5", padding: "70px 0" }}>
+      {/* Home Courses Header */}
       <div className="mb-5">
         <h4 className="fs-6 text-primary text-center">COURSES</h4>
         <h2 className="fs-1 fw-bold text-center">Our Popular Courses</h2>
       </div>
+
+      {/* When loading show the spinner */}
       {
         isLoading && <Loading />
       }
 
       <Container>
+        {/* All Courses are here */}
         <Row>
           {courses?.map((course) => (
             <HomeCourse key={course._id} course={course} />
@@ -37,6 +42,7 @@ const HomeCourses = () => {
         </Row>
       </Container>
       <div className="text-center">
+        {/* Courses button are here */}
         <Link to="/courses">
           <PrimaryButton background="#377DFF" color="#FFFFFF">
             Browse All Courses

@@ -34,9 +34,11 @@ const Students = () => {
   ];
   return (
     <div className="py-5">
+      {/* Students Header */}
       <h4 className="fs-6 text-primary text-center">TESTIMONIAL</h4>
       <h2 className="fs-1 fw-bold text-center mb-4">What Students Say?</h2>
       <Container>
+        {/* All Students */}
         <Row>
           {students.map((student) => (
             <SingleStudent key={student._id} student={student} />

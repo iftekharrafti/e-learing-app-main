@@ -12,4 +12,8 @@
     .contactForm{
         padding: 20px;
     }
+
+    .contactInnerName{
+        width: 100%;
+    }
 }

@@ -20,6 +20,7 @@ const Footer = () => {
       <div style={{ background: "#021D3A", padding: "70px 0" }}>
         <Container>
           <Row>
+            {/* Logo and First part */}
             <Col md={3} sm={6} xs={12}>
               <Image src={logo} alt="logo" style={{ color: "white" }} />
               <p className="fs-6 text-white mt-3">
@@ -27,6 +28,8 @@ const Footer = () => {
                 website with online education system.
               </p>
             </Col>
+
+            {/* Footer 2nd part */}
             <Col md={3} sm={6} xs={12}>
               <h3 className="fs-4 fw-bold text-white mb-4">Support</h3>
               <ul className="list-unstyled">
@@ -55,6 +58,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Col>
+            {/* Footer 3rd part */}
             <Col md={3} sm={6} xs={12}>
               <h3 className="fs-4 fw-bold text-white mb-4">Resources</h3>
               <ul className="list-unstyled">
@@ -81,6 +85,7 @@ const Footer = () => {
                 </li>
               </ul>
             </Col>
+            {/* Footer 3rd and Address part */}
             <Col md={3} sm={6} xs={12}>
               <h3 className="fs-4 fw-bold text-white mb-4">Our Address</h3>
               <p className="text-white">EDUMODO, Dhaka 1211</p>
@@ -89,6 +94,8 @@ const Footer = () => {
         </Container>
       </div>
       <div style={{ background: "#05274B", padding: "30px" }}>
+        {/* Footer bottom side */}
+        {/* Copyright & Social Media */}
         <Container>
           <Row>
             <Col md={6} sm={12}>

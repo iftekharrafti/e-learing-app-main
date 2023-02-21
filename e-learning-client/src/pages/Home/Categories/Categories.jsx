@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 const Categories = () => {
   return (
     <div className="py-5">
+      {/* Categories information are here */}
       <h4 className="fs-6 text-primary text-center">
         IMPROVE YOUR SKILL & GROW YOUR CAREER
       </h4>
@@ -21,11 +22,14 @@ const Categories = () => {
       </h2>
       <Container>
         <Row className="py-4">
+          {/* Category Card */}
           <Category img={business} title="Business" courses="3 Courses" />
           <Category img={health} title="Health & Fitness" courses="2 Courses" />
           <Category img={design} title="Design" courses="3 Courses" />
           <Category img={development} title="Development" courses="3 Courses" />
         </Row>
+
+          {/* Category Button here */}
         <div className="text-center">
           <Link to="/courses">
             <PrimaryButton background="#377DFF" color="#FFFFFF">

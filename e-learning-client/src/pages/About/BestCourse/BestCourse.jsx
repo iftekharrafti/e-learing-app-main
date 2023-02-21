@@ -11,6 +11,7 @@ const BestCourse = () => {
       <Container>
         <Row className="align-items-center">
           <Col md={5} sm={12} className="p-4">
+            {/* Best course Details */}
             <Slide left>
               <h3 className="fs-1 fw-bold">
                 We Are Providing The Best The Best Online Course
@@ -24,6 +25,7 @@ const BestCourse = () => {
             </Slide>
           </Col>
           <Col md={7} sm={12}>
+            {/* Best course Image */}
             <Slide right>
               <Row>
                 <Col md={6} sm={12}>

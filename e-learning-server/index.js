@@ -4,11 +4,15 @@ const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 
 const port = process.env.PORT || 5000;
 
+// Create experss app
 require("dotenv").config();
 const app = express();
 
+// Middleware
 app.use(express.json());
 app.use(cors());
+
+// Mongodb uri and connect mongodb
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.ts3db.mongodb.net/?retryWrites=true&w=majority`;
 const client = new MongoClient(uri, {
   useNewUrlParser: true,
@@ -18,19 +22,21 @@ const client = new MongoClient(uri, {
 
 async function run() {
   try {
+    // Create Collection
     const database = client.db("eLearningApp");
     const courses = database.collection("courses");
     const instructors = database.collection("instructors");
     const users = database.collection("users");
     const notices = database.collection("notices");
 
-    // Courses
+    // All Courses Get from the database
     app.get("/courses", async (req, res) => {
       const query = {};
       const options = await courses.find(query).toArray();
       res.send(options);
     });
-    // Courses Home
+
+    // Limited Courses get from the database
     app.get("/courses/home", async (req, res) => {
       const query = {};
       const options = await courses.find(query).limit(6).toArray();
@@ -53,20 +59,21 @@ async function run() {
       res.send(result);
     })
 
-    // Instructors
+    // All Instructors get from the database
     app.get("/instructors", async (req, res) => {
       const query = {};
       const options = await instructors.find(query).toArray();
       res.send(options);
     });
-    // Home Instructors
+
+    // Limited Instructors get from the database
     app.get("/instructors/home", async (req, res) => {
       const query = {};
       const options = await instructors.find(query).limit(4).toArray();
       res.send(options);
     });
 
-    // Instructor Details
+    // Single Instructor get
     app.get("/instructor/:id", async (req, res) => {
       const id = req.params.id;
       const query = { _id: new ObjectId(id) };
@@ -96,6 +103,7 @@ async function run() {
       res.send(user);
     });
 
+    // User as a admin or not
     app.get("/users/admin/:email", async (req, res) => {
       const email = req.params.email;
       const query = { email };
@@ -132,6 +140,7 @@ async function run() {
       res.send(result);
     })
 
+    // Recent notices
     app.get('/notices/recentNotice', async (req, res) => {
       const result = await notices.find().sort({date: -1}).limit(3).toArray(function(err,docs){
         if(err) throw err

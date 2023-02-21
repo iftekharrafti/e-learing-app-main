@@ -4,6 +4,7 @@ import { Button, Table } from 'react-bootstrap';
 import { toast } from "react-hot-toast";
 
 const AllUsers = () => {
+  // Get users from the database
     const {data: users=[], refetch} = useQuery({
         queryKey: ["allUsers"],
         queryFn: async () => {
@@ -13,6 +14,7 @@ const AllUsers = () => {
         }
     })
 
+    // Make admin 
     const makeAdmin = (id) =>{
       fetch(`http://localhost:5000/users/admin/${id}`, {
         method: 'PUT',
@@ -30,7 +32,8 @@ const AllUsers = () => {
 
     return (
         <div className="shadow rounded" style={{background: "#fff"}}>
-            <h2 className="fs-2 fw-bold text-center py-4">My courses</h2>
+            <h2 className="fs-2 fw-bold text-center py-4">All Users</h2>
+            {/* Show all users as a table */}
             <Table striped bordered hover responsive  >
                 <thead>
                   <tr>
@@ -39,6 +42,7 @@ const AllUsers = () => {
                     <th>Admin</th>
                   </tr>
                 </thead>
+                {/* show user from the database */}
                 {users.map((user) => (
                   <tbody key={user._id}>
                     <tr>

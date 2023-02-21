@@ -14,11 +14,13 @@ const SingleStudent = ({ student }) => {
 
   return (
     <Col md={4} sm={12} xs={12}>
+      {/* Student Card are here */}
       <Slide bottom>
         <div
           className="text-center mb-3"
           style={{ background: "#F5F5F5", padding: "45px 25px" }}
         >
+          {/* Card title, description, image, and Rating */}
           <FontAwesomeIcon className="fs-1 text-primary" icon={faQuoteLeft} />
           <h4 className="fs-5 fw-bold">{title}</h4>
           <p className="fs-6">{description}</p>

@@ -39,13 +39,16 @@ const HomeOffer = () => {
     >
       <Container>
         <Row className="align-items-center">
+          {/* Offer Left Part writing part */}
           <Col sm={12} md={6} className="py-4 pe-4">
             <Fade left>
               <h4 className="fs-6 text-white">LIMITED TIME OFFER</h4>
               <h2 className="fs-1 fw-bold text-white">
                 30% Discount On All Of Our New And Upcoming Courses
               </h2>
+              {/* offer count down. Time limit */}
               <Countdown date={Date.now() + 9959900000} renderer={renderer} />
+              {/* Offer left side button */}
               <Link to="/courses">
                 <PrimaryButton background="white" color="#0D6EFD">
                   Enroll Now
@@ -55,6 +58,7 @@ const HomeOffer = () => {
             </Fade>
           </Col>
           <Col sm={12} md={6}>
+            {/* Offer Right part Image */}
             <Fade right>
               <img className="img-fluid" src={offerImg} alt="" />
             </Fade>

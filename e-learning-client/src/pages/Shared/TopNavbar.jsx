@@ -32,9 +32,10 @@ const TopNavbar = () => {
     <div style={{ background: "#1D6AF8" }} className="topNavbar py-2">
       <Container>
         <div className="topNavbarLarge">
-          {/* Main Navbar Content */}
+          {/* Top Navbar Content Large Screen */}
           <Row>
             <Col md={6} xs={12}>
+              {/* Contact Number & Email Address*/}
               <div className="text-white d-flex py-2 contact">
                 <div className="d-flex align-items-center me-3">
                   <FontAwesomeIcon
@@ -55,6 +56,7 @@ const TopNavbar = () => {
             </Col>
             <Col md={6} xs={12}>
               <div className="d-flex align-items-center justify-content-end">
+                {/* Social Media Icons */}
                 <div className="me-5">
                   <a
                     className="text-white me-2"
@@ -90,6 +92,8 @@ const TopNavbar = () => {
                     <FontAwesomeIcon icon={faSnapchat} />
                   </a>
                 </div>
+
+                {/* Shopping Cart & Bookmark icon */}
                 <div>
                   <Link
                     to="/cart"
@@ -124,6 +128,8 @@ const TopNavbar = () => {
                       </Badge>
                     </span>
                   </Link>
+
+                  {/* Login & Dashboard */}
                   {user ? (
                     <>
                       <Button
@@ -157,6 +163,8 @@ const TopNavbar = () => {
                       </Link>
                     </Button>
                   )}
+
+                  {/* Register & Logout Button */}
 
                   {user ? (
                     <Button
@@ -198,7 +206,8 @@ const TopNavbar = () => {
         </div>
 
         {/* For Small Screen */}
-        <div className="topNavbarSmall d-flex justify-content-between">
+        <div className="topNavbarSmall">
+          <div className="d-flex justify-content-between">
           <div>
             {/* Top Navbar Shoppint Cart */}
             <Link
@@ -301,6 +310,7 @@ const TopNavbar = () => {
                 </Link>
               </Button>
             )}
+          </div>
           </div>
         </div>
       </Container>

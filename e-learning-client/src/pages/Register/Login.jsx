@@ -16,12 +16,13 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
+  // Login form
   const handleLoginSubmit = (data) => {
     logInUser(data.email, data.password)
     .then(userCredential =>{
       console.log(userCredential.user);
       toast.success("Login Successfull");
-      navigate('/');
+      navigate('/dashboard');
     })
     .catch(error =>{
       console.log(error.message);
@@ -30,7 +31,9 @@ const Login = () => {
 
   return (
     <div style={{ background: "#EDF0F2" }}>
+      {/* Login page Header */}
       <PagesHeader title="Login" sub="Login" />
+
       <Container>
         <Row>
           <div
@@ -45,6 +48,7 @@ const Login = () => {
                   borderRadius: "20px",
                 }}
               >
+                {/* Form header and login Form data */}
                 <h2 className="fs-2 mb-4">Hi, Welcome back!</h2>
                 <Form onSubmit={handleSubmit(handleLoginSubmit)}>
                   <Form.Group className="mb-3" controlId="formEmail">

@@ -12,11 +12,13 @@ const AddCourse = () => {
   } = useForm();
   const imgbbHostKey = process.env.REACT_APP_imgbb_key;
 
+  // Get all data in the form and send it to the database
   const handleAddCouse = (data) =>{
     const image = data.img[0];
     const formData = new FormData();
     formData.append('image', image);
 
+    // Send image in the imgbb and get the image link
     const url = `https://api.imgbb.com/1/upload?key=${imgbbHostKey}`
     fetch(url, {
       method: 'POST',
@@ -24,6 +26,7 @@ const AddCourse = () => {
     })
     .then(res => res.json())
     .then(imgData =>{
+      // took all data and create a object that send to the database
       if(imgData.success){
         const course = {
           title: data.title,
@@ -65,6 +68,7 @@ const AddCourse = () => {
                 borderRadius: "20px",
               }}
             >
+              {/* Course Form */}
               <Form onSubmit={handleSubmit(handleAddCouse)}>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
                   <Form.Label className="fw-bold">Title</Form.Label>
@@ -79,6 +83,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
+                
                 <Form.Group className="mb-3" controlId="formBasicLastName">
                   <Form.Label className="fw-bold">Price</Form.Label>
                   <Form.Control
@@ -94,6 +99,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="fw-bold">Category</Form.Label>
                   <Form.Control
@@ -109,6 +115,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className="fw-bold">Rating</Form.Label>
                   <Form.Control
@@ -124,6 +131,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
+
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className="fw-bold">Image</Form.Label>
                   <Form.Control
@@ -139,6 +147,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
+                
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className="fw-bold">Description</Form.Label>
                   <Form.Control

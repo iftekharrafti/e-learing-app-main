@@ -6,6 +6,7 @@ import PagesHeader from "../../Components/PagesHeader/PagesHeader";
 import SingleNotice from "./SingleNotice";
 
 const Notices = () => {
+  // // Notices Data fetching from the server
     const {data: notices = [], isLoading} = useQuery({
         queryKey: ['notices'],
         queryFn: async () => {
@@ -17,12 +18,15 @@ const Notices = () => {
 
   return (
     <div style={{background: '#EDF0F2'}}>
+      {/* Notice page Header */}
       <PagesHeader title="All Notices" sub="Notice" />
       
+      {/* When data loading show spinner */}
       <Container className="py-5">
         {
           isLoading && <Loading />
         }
+        {/* Notices data show */}
         <Row>
           {notices?.map((notice) => (
             <SingleNotice key={notice._id} notice={notice} />
