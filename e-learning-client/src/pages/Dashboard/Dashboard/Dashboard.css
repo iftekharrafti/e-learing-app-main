@@ -1,0 +1,12 @@
+.background{
+    height: 70vh;
+    padding:30px;
+    background: #fff;
+}
+
+@media (max-width: 768px) {
+    .background{
+        height: 40vh;
+        padding:15px;
+    }
+  }

@@ -1,0 +1,82 @@
+[
+    {
+        "img": "https://i.ibb.co/zmYtpfL/financial.jpg",
+        "title": "Complete Financial Analyst Course",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Business",
+        "price": 15,
+        "rating":2,
+        "hours":17,
+        "minutes":20
+    },
+    {
+        "img": "https://i.ibb.co/Q6GSzXW/trello.jpg",
+        "title": "Trello Fundamentals - Beginners to Advanced",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Development",
+        "price": 25,
+        "rating":2,
+        "hours":3,
+        "minutes":20
+    },
+    {
+        "img": "https://i.ibb.co/hVrLTWd/sales.jpg",
+        "title": "Sales Training: Practical Sales Techniques",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Health",
+        "price": 19,
+        "rating":2,
+        "hours":2,
+        "minutes":20
+    },
+    {
+        "img": "https://i.ibb.co/Vjn0JJ3/blender.jpg",
+        "title": "Complete Blender Creator: Learn 3D Modeling",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Business",
+        "price": "29",
+        "rating":1,
+        "hours":15,
+        "minutes":20
+    },
+    {
+        "img": "https://i.ibb.co/sPcbmSj/nutrition-1.jpg",
+        "title": "User Experience Design Essentials",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Design",
+        "price": "24",
+        "rating":2,
+        "hours":10,
+        "minutes":40
+    },
+    {
+        "img": "https://i.ibb.co/pXxPRQ9/photoshop.jpg",
+        "title": "Ultimate Photoshop Training From Beginner",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Design",
+        "price": "20",
+        "rating":2,
+        "hours":13,
+        "minutes":20
+    },
+    {
+        "img": "https://i.ibb.co/r2nBfP8/javascript.jpg",
+        "title": "Javascript Training From Beginner",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Development",
+        "price": "30",
+        "rating":5,
+        "hours":13,
+        "minutes":20
+    },
+    {
+        "img": "https://i.ibb.co/FJzxjGq/nutrition.jpg",
+        "title": "Neutrition in the general",
+        "description":"Are you new to PHP or need a refresher? Then this course will help you get all the fundamentals of Procedural PHP, Object Oriented PHP, MYSQLi and ending the course by building a CMS system similar to WordPress, Joomla or Drupal.Knowing PHP has allowed me to make enough money to stay home and make courses like this one for students all over the world. Being a PHP developer can allow anyone to make really good money online and offline, developing dynamic applications.Knowing PHP will allow you to build web applications, websites or Content Management systems, like WordPress, Facebook, Twitter or even Google.There is no limit to what you can do with this knowledge. PHP is one of the most important web programming languages to learn, and knowing it, will give you SUPER POWERS in the web development world and job market place.",
+        "category":"Business",
+        "price": "10",
+        "rating":3,
+        "hours":13,
+        "minutes":20
+    }
+]

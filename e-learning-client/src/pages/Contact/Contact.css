@@ -1,0 +1,15 @@
+.contactForm{
+    padding: 50px;
+}
+
+.contactName{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .contactForm{
+        padding: 20px;
+    }
+}
