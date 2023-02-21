@@ -25,7 +25,7 @@ const Platform = () => {
             <Bounce right>
               <div className="p-4">
                 {/* Platform Header */}
-                <h2 className="fs-1 fw-bold mb-4">
+                <h2 className="fs-1 fw-bold mb-4" style={{fontFamily: 'Merriweather'}}>
                   Best Online Learning platform
                 </h2>
                 {/* Platform High Quality Resources icon and details */}
@@ -37,7 +37,7 @@ const Platform = () => {
                     style={{ width: "80px" }}
                   />
                   <div className="ms-4">
-                    <h4 className="fs-4 fw-bold mb-2">
+                    <h4 className="fs-4 fw-bold mb-2" style={{fontFamily: 'Lato'}}>
                       High Quality Resources
                     </h4>
                     <p className="fs-6">
@@ -55,7 +55,7 @@ const Platform = () => {
                     style={{ width: "80px" }}
                   />
                   <div className="ms-4">
-                    <h4 className="fs-4 fw-bold mb-2">Expert Instructor</h4>
+                    <h4 className="fs-4 fw-bold mb-2" style={{fontFamily: 'Lato'}}>Expert Instructor</h4>
                     <p className="fs-6">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Ut elit tellus, luctus nec ullamcorper mattis.
@@ -71,7 +71,7 @@ const Platform = () => {
                     style={{ width: "80px" }}
                   />
                   <div className="ms-4">
-                    <h4 className="fs-4 fw-bold mb-2">Dedicated Support</h4>
+                    <h4 className="fs-4 fw-bold mb-2" style={{fontFamily: 'Lato'}}>Dedicated Support</h4>
                     <p className="fs-6">
                       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                       Ut elit tellus, luctus nec ullamcorper mattis.

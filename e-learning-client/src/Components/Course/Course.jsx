@@ -89,7 +89,7 @@ const Course = ({ course }) => {
               to={`/course/${_id}`}
               style={{ color: "black", textDecoration: "none" }}
             >
-              <h3 className="fs-4 fw-bold mt-0">{title}</h3>
+              <h3 className="fs-4 fw-bold mt-0" style={{fontFamily: 'Lato'}}>{title}</h3>
             </Link>
 
             <div className="mb-1 d-flex align-items-center">

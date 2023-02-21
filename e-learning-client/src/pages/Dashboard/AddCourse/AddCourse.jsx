@@ -55,7 +55,7 @@ const AddCourse = () => {
 
   return (
     <div className="shadow rounded" style={{background: "#fff"}}>
-      <h2 className="fs-2 fw-bold text-center pt-4">Add course</h2>
+      <h2 className="fs-2 fw-bold text-center pt-4" style={{fontFamily: 'Merriweather'}}>Add course</h2>
       <Row>
         <div
           className="d-flex justify-content-center"

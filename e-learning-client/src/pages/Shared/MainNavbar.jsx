@@ -5,7 +5,7 @@ import { Image } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/icons/logo.png";
 import "./MainNavbar.css";
 import {
@@ -37,42 +37,42 @@ function MainNavbar() {
           {/* Nav list */}
           <Nav>
             <Nav.Link>
-              <Link className="text-black text-decoration-none" to="/">
+              <NavLink className="text-black text-decoration-none" to="/">
                 Home
-              </Link>
+              </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <Link className="text-black text-decoration-none" to="/courses">
+              <NavLink className="text-black text-decoration-none" to="/courses">
                 Courses
-              </Link>
+              </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <Link className="text-black text-decoration-none" to="/about">
+              <NavLink className="text-black text-decoration-none" to="/about">
                 About Us
-              </Link>
+              </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <Link
+              <NavLink
                 className="text-black text-decoration-none"
                 to="/instructors"
               >
                 Instructors
-              </Link>
+              </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <Link className="text-black text-decoration-none" to="/notice">
+              <NavLink className="text-black text-decoration-none" to="/notice">
                 Notice
-              </Link>
+              </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <Link className="text-black text-decoration-none" to="/blog">
+              <NavLink className="text-black text-decoration-none" to="/blog">
                 Blog
-              </Link>
+              </NavLink>
             </Nav.Link>
             <Nav.Link>
-              <Link className="text-black text-decoration-none" to="/contact">
+              <NavLink className="text-black text-decoration-none" to="/contact">
                 Contact
-              </Link>
+              </NavLink>
             </Nav.Link>
           </Nav>
 

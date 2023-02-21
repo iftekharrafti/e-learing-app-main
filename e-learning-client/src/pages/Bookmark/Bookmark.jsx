@@ -33,7 +33,7 @@ const Bookmark = () => {
         <Row>
           <Col md={12} sm={12}>
             {/* Bookmark header & product information show */}
-            <h2 className="text-center my-3 fs-2 fw-bold">BookMark Product</h2>
+            <h2 className="text-center my-3 fs-2 fw-bold" style={{fontFamily: 'Merriweather'}}>BookMark Product</h2>
             <p>{state.bookmark.length} Courses in Bookmark</p>
             {/* product show as a table */}
             {state.bookmark.length ? (

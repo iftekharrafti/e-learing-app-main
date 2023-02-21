@@ -28,7 +28,7 @@ const MyProfile = () => {
                 }}
               >
                 {/* Form header and login Form data */}
-                <h2 className="fs-2 mb-4">My Profile</h2>
+                <h2 className="fs-2 mb-4" style={{fontFamily: 'Merriweather'}}>My Profile</h2>
                 <Form.Group className="mb-3" controlId="formName">
                   <Form.Label>Name</Form.Label>
                   <Form.Control

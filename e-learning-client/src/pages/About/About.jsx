@@ -57,7 +57,7 @@ const About = () => {
       </div>
 
       {/* Students component here */}
-      <h2 className="fs-1 fw-bold text-center mt-5 mb-4">What Students Say?</h2>
+      <h2 className="fs-1 fw-bold text-center mt-5 mb-4" style={{fontFamily: 'Merriweather'}}>What Students Say?</h2>
       <Container>
         <Row>
           {students.map((student) => (

@@ -26,7 +26,7 @@ const PagesHeader = ({ title, sub, sub2 }) => {
         }}
       ></div>
       <Container>
-        <h3 className="fs-1 fw-bold">{title}</h3>
+        <h3 className="fs-1 fw-bold" style={{fontFamily: 'Merriweather'}}>{title}</h3>
         <Breadcrumb>
           <Breadcrumb.Item className="text-decoration-none">
             <Link className="text-decoration-none text-white fw-bold" to="/">

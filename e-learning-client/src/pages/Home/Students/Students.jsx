@@ -35,8 +35,8 @@ const Students = () => {
   return (
     <div className="py-5">
       {/* Students Header */}
-      <h4 className="fs-6 text-primary text-center">TESTIMONIAL</h4>
-      <h2 className="fs-1 fw-bold text-center mb-4">What Students Say?</h2>
+      <h4 className="fs-6 text-primary text-center" style={{fontFamily: 'Merriweather'}}>TESTIMONIAL</h4>
+      <h2 className="fs-1 fw-bold text-center mb-4" style={{fontFamily: 'Merriweather'}}>What Students Say?</h2>
       <Container>
         {/* All Students */}
         <Row>

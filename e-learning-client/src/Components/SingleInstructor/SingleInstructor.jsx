@@ -22,7 +22,7 @@ const SingleInstructor = ({ instructor }) => {
               to={`/instructor/${_id}`}
               className="text-black text-decoration-none"
             >
-              <h4 className="text-center">{name}</h4>
+              <h4 className="text-center" style={{fontFamily: 'Lato'}}>{name}</h4>
             </Link>
             <p className="text-center">{subject}</p>
           </div>

@@ -11,7 +11,7 @@ const CounterCard = ({digit, symbol, name}) => {
               <CountUp className="fs-2 fw-bold" end={digit} duration={3} />
               <span className="fs-2 fw-bold">{symbol}</span>
             </div>
-            <p className="fs-5 fw-bold">{name}</p>
+            <p className="fs-5 fw-bold" style={{fontFamily: 'Lato'}}>{name}</p>
           </div>
         </Col>
     );

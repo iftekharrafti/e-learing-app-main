@@ -22,7 +22,7 @@ const SingleStudent = ({ student }) => {
         >
           {/* Card title, description, image, and Rating */}
           <FontAwesomeIcon className="fs-1 text-primary" icon={faQuoteLeft} />
-          <h4 className="fs-5 fw-bold">{title}</h4>
+          <h4 className="fs-5 fw-bold" style={{fontFamily: 'Lato'}}>{title}</h4>
           <p className="fs-6">{description}</p>
           <p>
             <Rating

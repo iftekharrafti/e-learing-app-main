@@ -24,8 +24,8 @@ const HomeCourses = () => {
     <div style={{ background: "#F5F5F5", padding: "70px 0" }}>
       {/* Home Courses Header */}
       <div className="mb-5">
-        <h4 className="fs-6 text-primary text-center">COURSES</h4>
-        <h2 className="fs-1 fw-bold text-center">Our Popular Courses</h2>
+        <h4 className="fs-6 text-primary text-center" style={{fontFamily: 'Merriweather'}}>COURSES</h4>
+        <h2 className="fs-1 fw-bold text-center" style={{fontFamily: 'Merriweather'}}>Our Popular Courses</h2>
       </div>
 
       {/* When loading show the spinner */}

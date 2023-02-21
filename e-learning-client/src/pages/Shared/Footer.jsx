@@ -31,7 +31,7 @@ const Footer = () => {
 
             {/* Footer 2nd part */}
             <Col lg={3} md={6} sm={6} xs={12}>
-              <h3 className="fs-4 fw-bold text-white mb-4">Support</h3>
+              <h3  style={{fontFamily: 'Lato'}} className="fs-4 fw-bold text-white mb-4">Support</h3>
               <ul className="list-unstyled">
                 <li className="mb-2">
                   <Link to="/" className="text-decoration-none text-white">
@@ -60,7 +60,7 @@ const Footer = () => {
             </Col>
             {/* Footer 3rd part */}
             <Col lg={3} md={6} sm={6} xs={12}>
-              <h3 className="fs-4 fw-bold text-white mb-4">Resources</h3>
+              <h3  style={{fontFamily: 'Lato'}} className="fs-4 fw-bold text-white mb-4">Resources</h3>
               <ul className="list-unstyled">
                 <li className="mb-2">
                   <Link to="/" className="text-decoration-none text-white">
@@ -87,7 +87,7 @@ const Footer = () => {
             </Col>
             {/* Footer 3rd and Address part */}
             <Col lg={3} md={6} sm={6} xs={12}>
-              <h3 className="fs-4 fw-bold text-white mb-4">Our Address</h3>
+              <h3  style={{fontFamily: 'Lato'}} className="fs-4 fw-bold text-white mb-4">Our Address</h3>
               <p className="text-white">EDUMODO, Dhaka 1211</p>
             </Col>
           </Row>

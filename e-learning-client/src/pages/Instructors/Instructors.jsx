@@ -17,10 +17,10 @@ const Instructors = () => {
   })
 
   return (
-    <div className="my-5">
+    <div className="">
       {/* Instructor page Header */}
         <PagesHeader title="Instructors" sub="Instructors" />
-      <h2 className="fs-1 fw-bold text-center mb-4 mt-5">Our Expert Instructor</h2>
+      <h2 className="fs-1 fw-bold text-center mb-4 mt-5" style={{fontFamily: 'Merriweather'}}>Our Expert Instructor</h2>
 
       <Container>
       {isLoading && (

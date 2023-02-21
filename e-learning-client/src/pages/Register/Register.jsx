@@ -78,7 +78,7 @@ const Register = () => {
                 {/* Register Form data */}
                 <Form onSubmit={handleSubmit(handleRegisterSubmit)}>
                   <Form.Group className="mb-3" controlId="formBasicFirstName">
-                    <Form.Label className="fw-bold">First Name</Form.Label>
+                    <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">First Name</Form.Label>
                     <Form.Control
                     className="remove-focus"
                       size="lg"
@@ -93,7 +93,7 @@ const Register = () => {
                     )}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicLastName">
-                  <Form.Label className="fw-bold">Last Name</Form.Label>
+                  <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">Last Name</Form.Label>
                     <Form.Control
                     className="remove-focus"
                       size="lg"
@@ -110,7 +110,7 @@ const Register = () => {
                     )}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="fw-bold">E-Mail</Form.Label>
+                  <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">E-Mail</Form.Label>
                     <Form.Control
                     className="remove-focus"
                       size="lg"
@@ -127,7 +127,7 @@ const Register = () => {
                     )}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label className="fw-bold">Password</Form.Label>
+                  <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">Password</Form.Label>
                     <Form.Control
                     className="remove-focus"
                       size="lg"

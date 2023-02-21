@@ -34,7 +34,7 @@ const SingleNotice = ({ notice }) => {
               to={`/notice/${notice._id}`}
               className="text-black text-decoration-none"
             >
-              <h4 className="fs-4">{title}</h4>
+              <h4 className="fs-4" style={{fontFamily: 'Lato'}}>{title}</h4>
             </Link>
             <div className="d-flex align-items-center mb-2">
               <FontAwesomeIcon

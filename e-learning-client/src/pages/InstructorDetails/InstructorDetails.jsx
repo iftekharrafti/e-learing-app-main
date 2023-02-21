@@ -48,7 +48,7 @@ const InstructorDetails = () => {
                   className="w-100 text-center text-white py-2"
                   style={{ background: "#1D6AF8" }}
                 >
-                  <h3>{name}</h3>
+                  <h3 style={{fontFamily: 'Merriweather'}}>{name}</h3>
                 </div>
                 <div className="ps-3 py-4">
                   <div className="d-flex align-items-center mb-3">
@@ -79,25 +79,25 @@ const InstructorDetails = () => {
             </Col>
             <Col md={8} sm={12}>
               <div className="mb-3">
-                <h3>About</h3>
+                <h3 style={{fontFamily: 'Merriweather'}}>About</h3>
                 <p>
                   {about}
                 </p>
               </div>
               <div className="mb-3">
-                <h3>Degree</h3>
+                <h3 style={{fontFamily: 'Merriweather'}}>Degree</h3>
                 <p>
                   {Degree}
                 </p>
               </div>
               <div className="mb-3">
-                <h3>Education</h3>
+                <h3 style={{fontFamily: 'Merriweather'}}>Education</h3>
                 <p>
                   {education}
                 </p>
               </div>
               <div className="mb-3">
-                <h3>Experience</h3>
+                <h3 style={{fontFamily: 'Merriweather'}}>Experience</h3>
                 <p>
                   {expericence}
                 </p>

@@ -33,7 +33,7 @@ const Contact = () => {
             {/* Contact page left side Email, contact and others */}
             <Col md={5} sm={12}>
               <div className="mb-4">
-                <h2 className="fs-2 mb-3">Have any Questions?</h2>
+                <h2 className="fs-2 mb-3" style={{fontFamily: 'Merriweather'}}>Have any Questions?</h2>
                 <p className="fs-6">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
                   elit tellus, luctus nec ullamcorper mattis, pulvinar .
@@ -46,7 +46,7 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faEnvelope} />
                   </div>
                   <div className="ms-3">
-                    <h4 className="fs-5 fw-bold mt-3">Email Us</h4>
+                    <h4 className="fs-5 fw-bold mt-3" style={{fontFamily: 'Lato'}}>Email Us</h4>
                     <p>support@example.com</p>
                   </div>
                 </div>
@@ -55,7 +55,7 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faPhone} />
                   </div>
                   <div className="ms-3">
-                    <h4 className="fs-5 fw-bold mt-3">Contact Us</h4>
+                    <h4 className="fs-5 fw-bold mt-3" style={{fontFamily: 'Lato'}}>Contact Us</h4>
                     <p>+(88) 01254824521</p>
                   </div>
                 </div>
@@ -64,7 +64,7 @@ const Contact = () => {
                     <FontAwesomeIcon icon={faLocationDot} />
                   </div>
                   <div className="ms-3">
-                    <h4 className="fs-5 fw-bold mt-3">Office Location</h4>
+                    <h4 className="fs-5 fw-bold mt-3" style={{fontFamily: 'Lato'}}>Office Location</h4>
                     <p>EDUMODO, Dhaka 1211</p>
                   </div>
                 </div>

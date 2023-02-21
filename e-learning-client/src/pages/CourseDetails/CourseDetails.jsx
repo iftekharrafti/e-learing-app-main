@@ -93,7 +93,7 @@ const CourseDetails = () => {
         <Row>
           <Col lg={8} md={12} sm={12}>
             <Image className="img-fluid" src={img} alt="Course" />
-            <h3 className="my-3">About Course</h3>
+            <h3 className="my-3" style={{fontFamily: 'Merriweather'}}>About Course</h3>
             <p style={{ lineHeight: "25px" }}>{description}</p>
           </Col>
           <Col lg={4} md={12} sm={12}>
@@ -124,7 +124,7 @@ const CourseDetails = () => {
               )}
             </div>
             <div className="bg-white p-5 shadow rounded">
-              <h3>Material Includes</h3>
+              <h3 style={{fontFamily: 'Merriweather'}}>Material Includes</h3>
               <ul>
                 <li>
                   {hours} hours {minutes} minutes

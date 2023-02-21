@@ -13,7 +13,7 @@ const MyCourses = () => {
   return (
     <div className="shadow rounded" style={{ background: "#fff" }}>
       {/* My Courses title */}
-      <h2 className="fs-2 fw-bold text-center py-4">My courses</h2>
+      <h2 className="fs-2 fw-bold text-center py-4" style={{fontFamily: 'Merriweather'}}>My courses</h2>
 
       {/* if user checkout any product then show the product as a table */}
       {state.checkout.length ? (

@@ -32,7 +32,7 @@ const AllUsers = () => {
 
     return (
         <div className="shadow rounded" style={{background: "#fff"}}>
-            <h2 className="fs-2 fw-bold text-center py-4">All Users</h2>
+            <h2 className="fs-2 fw-bold text-center py-4" style={{fontFamily: 'Merriweather'}}>All Users</h2>
             {/* Show all users as a table */}
             <Table striped bordered hover responsive  >
                 <thead>

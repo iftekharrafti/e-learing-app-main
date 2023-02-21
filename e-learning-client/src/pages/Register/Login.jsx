@@ -49,7 +49,7 @@ const Login = () => {
                 }}
               >
                 {/* Form header and login Form data */}
-                <h2 className="fs-2 mb-4">Hi, Welcome back!</h2>
+                <h2 className="fs-2 mb-4" style={{fontFamily: 'Merriweather'}}>Hi, Welcome back!</h2>
                 <Form onSubmit={handleSubmit(handleLoginSubmit)}>
                   <Form.Group className="mb-3" controlId="formEmail">
                     <Form.Control

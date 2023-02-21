@@ -14,11 +14,11 @@ const Categories = () => {
   return (
     <div className="py-5">
       {/* Categories information are here */}
-      <h4 className="fs-6 text-primary text-center">
+      <h4 className="fs-6 text-primary text-center" style={{fontFamily: 'Merriweather'}}>
         IMPROVE YOUR SKILL & GROW YOUR CAREER
       </h4>
-      <h2 className="fs-1 fw-bold text-center">
-        Learn from the best learning platform
+      <h2 className="fs-1 fw-bold text-center" style={{fontFamily: 'Merriweather'}}>
+        Top Categories
       </h2>
       <Container>
         <Row className="py-4">

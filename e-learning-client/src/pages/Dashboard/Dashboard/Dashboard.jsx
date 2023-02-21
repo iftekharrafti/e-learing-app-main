@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import Footer from "../../Shared/Footer";
 import MainNavbar from "../../Shared/MainNavbar";
 import TopNavbar from "../../Shared/TopNavbar";
@@ -25,24 +25,24 @@ const Dashboard = () => {
             <div className="background rounded mb-4">
             <ul className="list-unstyled">
               <li className="mb-3">
-                <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard">My Courses</Link>
+                <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard">My Courses</NavLink>
               </li>
               <hr />
               <li className="mb-3">
-                <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/profile">My Profile</Link>
+                <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/profile">My Profile</NavLink>
               </li>
               <hr />
               {isAdmin && <>
                 <li className="mb-3">
-                <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/addInstructor">Add Instructor</Link>
+                <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/addInstructor">Add Instructor</NavLink>
               </li>
               <hr />
               <li className="mb-3">
-                <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/addCourse">Add a course</Link>
+                <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/addCourse">Add a course</NavLink>
               </li>
               <hr />
               <li className="mb-3">
-                <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/allUsers">Users</Link>
+                <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/allUsers">Users</NavLink>
               </li>
               </>}
             </ul>

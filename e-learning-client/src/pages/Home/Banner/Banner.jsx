@@ -11,8 +11,7 @@ const Banner = () => {
     <div
       style={{
         background: `url(${background})`,
-        backgroundPosition: "center",
-        backgroundSize: "cover",
+        backgroundSize: "center",
       }}
     >
       <Container>
@@ -20,10 +19,10 @@ const Banner = () => {
           {/* Home Banner Left Side */}
           <Col sm={12} md={6} className="py-4 pe-4">
             <Fade left>
-              <h4 className="fs-6 text-primary">
+              <h4 className="fs-6 text-primary" style={{fontFamily: 'Merriweather'}}>
                 IMPROVE YOUR SKILL & GROW YOUR CAREER
               </h4>
-              <h2 className="fs-1 fw-bold">
+              <h2 className="fs-1 fw-bold" style={{fontFamily: 'Merriweather'}}>
                 Learn from the best learning platform
               </h2>
               <p>

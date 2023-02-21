@@ -13,7 +13,7 @@ const BestCourse = () => {
           <Col md={5} sm={12} className="p-4">
             {/* Best course Details */}
             <Slide left>
-              <h3 className="fs-1 fw-bold">
+              <h3 className="fs-1 fw-bold" style={{fontFamily: 'Merriweather'}}>
                 We Are Providing The Best The Best Online Course
               </h3>
               <p style={{ color: "#4b5158" }}>

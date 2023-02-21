@@ -16,7 +16,7 @@ const AboutExpertInstructor = () => {
 
   return (
     <div className="py-5 my-4">
-      <h2 className="fs-1 fw-bold text-center mb-5">Our Expert Instructor</h2>
+      <h2 className="fs-1 fw-bold text-center mb-5" style={{fontFamily: 'Merriweather'}}>Our Expert Instructor</h2>
 
       <Container>
         <Row>

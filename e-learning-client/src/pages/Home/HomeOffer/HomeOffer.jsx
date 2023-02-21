@@ -42,8 +42,8 @@ const HomeOffer = () => {
           {/* Offer Left Part writing part */}
           <Col sm={12} md={6} className="py-4 pe-4">
             <Fade left>
-              <h4 className="fs-6 text-white">LIMITED TIME OFFER</h4>
-              <h2 className="fs-1 fw-bold text-white">
+              <h4 className="fs-6 text-white" style={{fontFamily: 'Merriweather'}}>LIMITED TIME OFFER</h4>
+              <h2 className="fs-1 fw-bold text-white" style={{fontFamily: 'Merriweather'}}>
                 30% Discount On All Of Our New And Upcoming Courses
               </h2>
               {/* offer count down. Time limit */}
