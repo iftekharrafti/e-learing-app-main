@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { Col, Container, Image, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import logo from "../../assets/icons/logo-white.png";
+import logo from "../../assets/icons/logo.png";
 import {
   faFacebook,
   faInstagram,
@@ -22,9 +22,9 @@ const Footer = () => {
           <Row>
             {/* Logo and First part */}
             <Col lg={3} md={6} sm={6} xs={12}>
-              <Image src={logo} alt="logo" style={{ color: "white" }} />
+              <Image src={logo} alt="logo" style={{ color: "white", width: '160px', height: '45px' }} />
               <p className="fs-6 text-white mt-3">
-                Edumodo is perfectly suitable for school, college and university
+                Calivard is perfectly suitable for school, college and university
                 website with online education system.
               </p>
             </Col>
