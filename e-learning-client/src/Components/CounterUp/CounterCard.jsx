@@ -4,7 +4,7 @@ import CountUp from "react-countup";
 
 const CounterCard = ({digit, symbol, name}) => {
     return (
-        <Col md={3} sm={12} xs={12}>
+        <Col lg={3} md={6} sm={12}>
           <div className="d-flex flex-column align-items-center justify-content-center">
             <div className="">
               {/* Counter Up Content here */}

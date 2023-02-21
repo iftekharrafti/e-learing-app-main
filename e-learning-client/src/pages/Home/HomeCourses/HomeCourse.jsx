@@ -59,7 +59,7 @@ const HomeCourse = ({ course }) => {
   };
 
   return (
-    <Col md={4} sm={12} xs={12}>
+    <Col lg={4} md={6} sm={12} xs={12}>
       <Zoom>
         <div className="shadow mb-4 rounded">
           {/* Bookmark icons here */}

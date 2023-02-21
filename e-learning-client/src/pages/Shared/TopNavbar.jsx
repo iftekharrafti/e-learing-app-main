@@ -34,7 +34,7 @@ const TopNavbar = () => {
         <div className="topNavbarLarge">
           {/* Top Navbar Content Large Screen */}
           <Row>
-            <Col md={6} xs={12}>
+            <Col md={5} xs={12}>
               {/* Contact Number & Email Address*/}
               <div className="text-white d-flex py-2 contact">
                 <div className="d-flex align-items-center me-3">
@@ -54,7 +54,7 @@ const TopNavbar = () => {
                 </div>
               </div>
             </Col>
-            <Col md={6} xs={12}>
+            <Col md={7} xs={12}>
               <div className="d-flex align-items-center justify-content-end">
                 {/* Social Media Icons */}
                 <div className="me-5">

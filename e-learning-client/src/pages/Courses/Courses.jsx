@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Container, Form, InputGroup, Row } from "react-bootstrap";
 import PagesHeader from "../../Components/PagesHeader/PagesHeader";
 import Course from "../../Components/Course/Course";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,6 +19,13 @@ const Courses = () => {
     const selectedValue = event.target.value;
     dispatch({ type: actionTypes.SORTING_VALUE, payload: selectedValue });
   };
+
+  const uniqueList = [
+    ...new Set(state.courses?.map((curelm) => {
+      return curelm.category
+    }))
+  ]
+  console.log(uniqueList);
 
   return (
     <div style={{ background: "#EDF0F2" }}>

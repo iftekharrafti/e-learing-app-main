@@ -4,7 +4,7 @@ import Rotate from "react-reveal/Rotate";
 
 const Category = ({ img, title, courses }) => {
   return (
-    <Col md={3} sm={12} xs={12}>
+    <Col lg={3} md={6} sm={12} xs={12}>
       {/* Category Card */}
       <Rotate bottom left>
         <div className="shadow rounded mb-4">

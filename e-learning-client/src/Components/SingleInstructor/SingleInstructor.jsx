@@ -6,7 +6,7 @@ import Zoom from "react-reveal/Zoom";
 const SingleInstructor = ({ instructor }) => {
   const { _id, name, img, subject } = instructor;
   return (
-    <Col md={3} sm={12} xs={12}>
+    <Col lg={3} md={6} sm={12}>
       {/* Instructor all data show */}
       {/* Instructor Card */}
       <Zoom>

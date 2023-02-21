@@ -1,17 +1,26 @@
-.logo{
-    width: 185px;
+.logo {
+  width: 185px;
 }
 
-.mainTopNav{
-    display: none;
+.mainTopNav {
+  display: none;
 }
 
 @media (max-width: 768px) {
-    .logo{
-        width: 170px;
-    }
+  .logo {
+    width: 170px;
+  }
 
-    .mainTopNav{
-        display: block;
-    }
+  .mainTopNav {
+    display: block;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .logo {
+    width: 170px;
+  }
+
+  .mainTopNav {
+    display: block;
+  }
 }

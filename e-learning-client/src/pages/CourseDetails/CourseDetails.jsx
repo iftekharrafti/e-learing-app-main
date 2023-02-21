@@ -91,12 +91,12 @@ const CourseDetails = () => {
         </div>
 
         <Row>
-          <Col md={8} sm={12}>
+          <Col lg={8} md={12} sm={12}>
             <Image className="img-fluid" src={img} alt="Course" />
             <h3 className="my-3">About Course</h3>
             <p style={{ lineHeight: "25px" }}>{description}</p>
           </Col>
-          <Col md={4} sm={12}>
+          <Col lg={4} md={12} sm={12}>
             <div className="bg-white p-5 mb-4 shadow rounded">
               <h3>${price}</h3>
               {cart ? (

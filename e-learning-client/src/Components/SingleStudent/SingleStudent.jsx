@@ -13,7 +13,7 @@ const SingleStudent = ({ student }) => {
   const { title, description, rating, img } = student;
 
   return (
-    <Col md={4} sm={12} xs={12}>
+    <Col lg={4} md={6} sm={12} xs={12}>
       {/* Student Card are here */}
       <Slide bottom>
         <div

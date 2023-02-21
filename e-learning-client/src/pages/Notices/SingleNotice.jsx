@@ -9,7 +9,7 @@ const SingleNotice = ({ notice }) => {
   const { img, title, date, description } = notice;
   return (
     // This is single Notice component
-    <Col md={4} sm={6} xs={12}>
+    <Col lg={4} md={6} sm={12} xs={12}>
       <Zoom>
         <div
           style={{

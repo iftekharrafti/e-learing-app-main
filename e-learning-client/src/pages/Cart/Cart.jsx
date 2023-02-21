@@ -13,7 +13,7 @@ const Cart = () => {
       <Container>
         <Row>
           {/* Cart header & product information show */}
-          <Col md={8} sm={8}>
+          <Col md={8} sm={12}>
             <h2 className="text-center my-3 fs-2 fw-bold">Shopping Cart</h2>
             <p>{state.cart.length} Courses in Cart</p>
 
@@ -84,7 +84,7 @@ const Cart = () => {
               </div>
             )}
           </Col>
-          <Col md={4}>
+          <Col md={4} sm={12}>
             {/* Total cost and Add to cart */}
             <div className="bg-white mt-5 p-5 mb-4 shadow rounded">
               <h3>Total</h3>

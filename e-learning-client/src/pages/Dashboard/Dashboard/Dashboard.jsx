@@ -27,16 +27,20 @@ const Dashboard = () => {
               <li className="mb-3">
                 <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard">My Courses</Link>
               </li>
+              <hr />
               <li className="mb-3">
                 <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/profile">My Profile</Link>
               </li>
+              <hr />
               {isAdmin && <>
                 <li className="mb-3">
                 <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/addInstructor">Add Instructor</Link>
               </li>
+              <hr />
               <li className="mb-3">
                 <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/addCourse">Add a course</Link>
               </li>
+              <hr />
               <li className="mb-3">
                 <Link className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/allUsers">Users</Link>
               </li>

@@ -57,14 +57,14 @@ const Course = ({ course }) => {
   };
 
   return (
-    <Col md={4} sm={12} xs={12}>
+    <Col lg={4} md={6} sm={12} xs={12}>
       <Zoom>
-        <div className="shadow mb-4 rounded" >
+        <div className="shadow mb-4 rounded" style={{maxHeight: '440px', overFlow: 'hidden'}} >
           {/* Course Card are here */}
           <div style={{ position: "relative" }}>
             {/* Course Image and pass the id are routes and singleCourseDetails */}
             <Link to={`/course/${_id}`}>
-              <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" />
+              <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" style={{height: '220px', width:'100%'}} />
             </Link>
             {/* Bookmark icon */}
             {bookmark ? (
@@ -105,7 +105,7 @@ const Course = ({ course }) => {
               <p className="my-0 mx-2">{newRating} Reviews</p>
             </div>
             <hr />
-            <div className="d-flex justify-content-between">
+            <div className="d-flex flex-wrap justify-content-between">
               <h5 className="text-primary">${price}</h5>
 
               {/* Shopping cart are here */}
