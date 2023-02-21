@@ -2,8 +2,16 @@
     width: 185px;
 }
 
+.mainTopNav{
+    display: none;
+}
+
 @media (max-width: 768px) {
     .logo{
         width: 170px;
+    }
+
+    .mainTopNav{
+        display: block;
     }
 }

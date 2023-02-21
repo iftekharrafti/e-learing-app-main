@@ -2,7 +2,17 @@
     display: block;
 }
 
+.topNavbarSmall{
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .topNavbarLarge{
+        display: none;
+    }
+    .topNavbarSmall{
+        display: block;
+    }
     .contact{
         display: none;
     }
