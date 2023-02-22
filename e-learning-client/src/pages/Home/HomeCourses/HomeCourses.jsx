@@ -13,25 +13,34 @@ const HomeCourses = () => {
   const { data: courses = [], isLoading } = useQuery({
     queryKey: ["courses"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/courses/home");
+      const res = await fetch(
+        "https://e-learning-app-i5dn.onrender.com/courses/home"
+      );
       const data = res.json();
       return data;
     },
   });
 
-
   return (
     <div style={{ background: "#F5F5F5", padding: "70px 0" }}>
       {/* Home Courses Header */}
       <div className="mb-5">
-        <h4 className="fs-6 text-primary text-center" style={{fontFamily: 'Merriweather'}}>COURSES</h4>
-        <h2 className="fs-1 fw-bold text-center" style={{fontFamily: 'Merriweather'}}>Our Popular Courses</h2>
+        <h4
+          className="fs-6 text-primary text-center"
+          style={{ fontFamily: "Merriweather" }}
+        >
+          COURSES
+        </h4>
+        <h2
+          className="fs-1 fw-bold text-center"
+          style={{ fontFamily: "Merriweather" }}
+        >
+          Our Popular Courses
+        </h2>
       </div>
 
       {/* When loading show the spinner */}
-      {
-        isLoading && <Loading />
-      }
+      {isLoading && <Loading />}
 
       <Container>
         {/* All Courses are here */}

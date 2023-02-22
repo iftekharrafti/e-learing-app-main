@@ -7,25 +7,25 @@ import SingleNotice from "./SingleNotice";
 
 const Notices = () => {
   // // Notices Data fetching from the server
-    const {data: notices = [], isLoading} = useQuery({
-        queryKey: ['notices'],
-        queryFn: async () => {
-            const res = await fetch("http://localhost:5000/notices")
-            const data = await res.json();
-            return data;
-        }
-      })
+  const { data: notices = [], isLoading } = useQuery({
+    queryKey: ["notices"],
+    queryFn: async () => {
+      const res = await fetch(
+        "https://e-learning-app-i5dn.onrender.com/notices"
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
 
   return (
-    <div style={{background: '#EDF0F2'}}>
+    <div style={{ background: "#EDF0F2" }}>
       {/* Notice page Header */}
       <PagesHeader title="All Notices" sub="Notice" />
-      
+
       {/* When data loading show spinner */}
       <Container className="py-5">
-        {
-          isLoading && <Loading />
-        }
+        {isLoading && <Loading />}
         {/* Notices data show */}
         <Row>
           {notices?.map((notice) => (

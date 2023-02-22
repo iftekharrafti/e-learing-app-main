@@ -5,56 +5,57 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import PagesHeader from "../../Components/PagesHeader/PagesHeader";
 import { AuthContext } from "../../contexts/AuthProvider";
-import '../RemoveFocus.css';
+import "../RemoveFocus.css";
 
 const Register = () => {
   const [signUpError, setSignUpError] = useState("");
-  const {registerUser, updateUser, signInWithGoogle, signInWithFacebook} = useContext(AuthContext);
+  const { registerUser, updateUser, signInWithGoogle, signInWithFacebook } =
+    useContext(AuthContext);
   const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
   // Get form data and create user
   const handleRegisterSubmit = (data) => {
     const fullName = data.firstName + " " + data.lastName;
     registerUser(data.email, data.password)
-    .then(result =>{
-      console.log(result.user);
-      toast.success("User Created Successfully");
-      saveUser(fullName, data.email)
-      const userInfo = {
-        displayName: data.name
-      }
-      updateUser(userInfo)
-      .then(() => {})
-      .catch(err => console.log(err));
-      navigate('/');
-    })
-    .catch(error =>{
-      setSignUpError(error.message);
-      reset()
-    })
+      .then((result) => {
+        console.log(result.user);
+        toast.success("User Created Successfully");
+        saveUser(fullName, data.email);
+        const userInfo = {
+          displayName: data.name,
+        };
+        updateUser(userInfo)
+          .then(() => {})
+          .catch((err) => console.log(err));
+        navigate("/");
+      })
+      .catch((error) => {
+        setSignUpError(error.message);
+        reset();
+      });
   };
 
   // Save user Data in Database
-  const saveUser = (name, email) =>{
-    const user = {name, email};
-    fetch('http://localhost:5000/users', {
-      method: 'POST',
+  const saveUser = (name, email) => {
+    const user = { name, email };
+    fetch("https://e-learning-app-i5dn.onrender.com/users", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
-      body: JSON.stringify(user)
+      body: JSON.stringify(user),
     })
-    .then(res => res.json())
-    .then(data => {
-      console.log(data)
-    })
-  }
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
+  };
 
   return (
     <div style={{ background: "#EDF0F2" }}>
@@ -78,9 +79,14 @@ const Register = () => {
                 {/* Register Form data */}
                 <Form onSubmit={handleSubmit(handleRegisterSubmit)}>
                   <Form.Group className="mb-3" controlId="formBasicFirstName">
-                    <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">First Name</Form.Label>
+                    <Form.Label
+                      style={{ fontFamily: "Lato" }}
+                      className="fw-bold"
+                    >
+                      First Name
+                    </Form.Label>
                     <Form.Control
-                    className="remove-focus"
+                      className="remove-focus"
                       size="lg"
                       type="text"
                       {...register("firstName", { required: true })}
@@ -93,9 +99,14 @@ const Register = () => {
                     )}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicLastName">
-                  <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">Last Name</Form.Label>
+                    <Form.Label
+                      style={{ fontFamily: "Lato" }}
+                      className="fw-bold"
+                    >
+                      Last Name
+                    </Form.Label>
                     <Form.Control
-                    className="remove-focus"
+                      className="remove-focus"
                       size="lg"
                       type="text"
                       {...register("lastName", {
@@ -110,9 +121,14 @@ const Register = () => {
                     )}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">E-Mail</Form.Label>
+                    <Form.Label
+                      style={{ fontFamily: "Lato" }}
+                      className="fw-bold"
+                    >
+                      E-Mail
+                    </Form.Label>
                     <Form.Control
-                    className="remove-focus"
+                      className="remove-focus"
                       size="lg"
                       type="email"
                       {...register("email", {
@@ -127,9 +143,14 @@ const Register = () => {
                     )}
                   </Form.Group>
                   <Form.Group className="mb-3" controlId="formBasicPassword">
-                  <Form.Label  style={{fontFamily: 'Lato'}} className="fw-bold">Password</Form.Label>
+                    <Form.Label
+                      style={{ fontFamily: "Lato" }}
+                      className="fw-bold"
+                    >
+                      Password
+                    </Form.Label>
                     <Form.Control
-                    className="remove-focus"
+                      className="remove-focus"
                       size="lg"
                       type="password"
                       {...register("password", {
@@ -153,17 +174,19 @@ const Register = () => {
                   >
                     Register
                   </Button>
-                  {signUpError && <p className="text-danger">User Already exists</p>}
+                  {signUpError && (
+                    <p className="text-danger">User Already exists</p>
+                  )}
                 </Form>
                 <div className="d-flex justify-content-between mt-4">
-                <Button
+                  <Button
                     variant="primary"
                     onClick={signInWithGoogle}
                     style={{ width: "45%" }}
                   >
                     Continue With Google
                   </Button>
-                <Button
+                  <Button
                     variant="primary"
                     style={{ width: "45%" }}
                     onClick={signInWithFacebook}

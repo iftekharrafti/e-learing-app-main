@@ -8,7 +8,9 @@ const HomeInstructors = () => {
   const { data: instructors = [] } = useQuery({
     queryKey: ["instructors"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/instructors/home");
+      const res = await fetch(
+        "https://e-learning-app-i5dn.onrender.com/instructors/home"
+      );
       const data = await res.json();
       return data;
     },
@@ -17,8 +19,18 @@ const HomeInstructors = () => {
   return (
     <div className="py-5">
       {/* Home Instructors Header */}
-      <h4 className="fs-6 text-primary text-center" style={{fontFamily: 'Merriweather'}}>INSTRUCTOR</h4>
-      <h2 className="fs-1 fw-bold text-center mb-4" style={{fontFamily: 'Merriweather'}}>Our Expert Instructor</h2>
+      <h4
+        className="fs-6 text-primary text-center"
+        style={{ fontFamily: "Merriweather" }}
+      >
+        INSTRUCTOR
+      </h4>
+      <h2
+        className="fs-1 fw-bold text-center mb-4"
+        style={{ fontFamily: "Merriweather" }}
+      >
+        Our Expert Instructor
+      </h2>
 
       <Container>
         {/* Instrutors data loading */}

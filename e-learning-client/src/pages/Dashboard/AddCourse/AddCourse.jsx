@@ -8,54 +8,59 @@ const AddCourse = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
   const imgbbHostKey = process.env.REACT_APP_imgbb_key;
 
   // Get all data in the form and send it to the database
-  const handleAddCouse = (data) =>{
+  const handleAddCouse = (data) => {
     const image = data.img[0];
     const formData = new FormData();
-    formData.append('image', image);
+    formData.append("image", image);
 
     // Send image in the imgbb and get the image link
-    const url = `https://api.imgbb.com/1/upload?key=${imgbbHostKey}`
+    const url = `https://api.imgbb.com/1/upload?key=${imgbbHostKey}`;
     fetch(url, {
-      method: 'POST',
-      body: formData
+      method: "POST",
+      body: formData,
     })
-    .then(res => res.json())
-    .then(imgData =>{
-      // took all data and create a object that send to the database
-      if(imgData.success){
-        const course = {
-          title: data.title,
-          img: imgData.data.url,
-          description: data.description,
-          category: data.category,
-          price: data.price,
-          rating: data.rating
-        }
+      .then((res) => res.json())
+      .then((imgData) => {
+        // took all data and create a object that send to the database
+        if (imgData.success) {
+          const course = {
+            title: data.title,
+            img: imgData.data.url,
+            description: data.description,
+            category: data.category,
+            price: data.price,
+            rating: data.rating,
+          };
 
-        // Save instructor information to the database
-        fetch("http://localhost:5000/courses",{
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(course)
-        })
-        .then(res => res.json())
-        .then(result => {
-          console.log(result)
-          toast.success('Course Added Successfully')
-          reset()
-        })
-      }
-    })
-  }
+          // Save instructor information to the database
+          fetch("https://e-learning-app-i5dn.onrender.com/courses", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(course),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              console.log(result);
+              toast.success("Course Added Successfully");
+              reset();
+            });
+        }
+      });
+  };
 
   return (
-    <div className="shadow rounded" style={{background: "#fff"}}>
-      <h2 className="fs-2 fw-bold text-center pt-4" style={{fontFamily: 'Merriweather'}}>Add course</h2>
+    <div className="shadow rounded" style={{ background: "#fff" }}>
+      <h2
+        className="fs-2 fw-bold text-center pt-4"
+        style={{ fontFamily: "Merriweather" }}
+      >
+        Add course
+      </h2>
       <Row>
         <div
           className="d-flex justify-content-center"
@@ -83,7 +88,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
-                
+
                 <Form.Group className="mb-3" controlId="formBasicLastName">
                   <Form.Label className="fw-bold">Price</Form.Label>
                   <Form.Control
@@ -147,7 +152,7 @@ const AddCourse = () => {
                     <span className="text-danger">This field is required</span>
                   )}
                 </Form.Group>
-                
+
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className="fw-bold">Description</Form.Label>
                   <Form.Control
@@ -158,7 +163,7 @@ const AddCourse = () => {
                       required: true,
                     })}
                     placeholder="Description"
-                    style={{resize: 'none'}}
+                    style={{ resize: "none" }}
                   />
                   {errors.description && (
                     <span className="text-danger">This field is required</span>

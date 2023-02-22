@@ -7,25 +7,30 @@ import SingleInstructor from "../../Components/SingleInstructor/SingleInstructor
 
 const Instructors = () => {
   // Instructor Data fetching from the server
-  const {data: instructors = [], isLoading} = useQuery({
-    queryKey: ['instructors'],
+  const { data: instructors = [], isLoading } = useQuery({
+    queryKey: ["instructors"],
     queryFn: async () => {
-        const res = await fetch("http://localhost:5000/instructors")
-        const data = await res.json();
-        return data;
-    }
-  })
+      const res = await fetch(
+        "https://e-learning-app-i5dn.onrender.com/instructors"
+      );
+      const data = await res.json();
+      return data;
+    },
+  });
 
   return (
     <div className="">
       {/* Instructor page Header */}
-        <PagesHeader title="Instructors" sub="Instructors" />
-      <h2 className="fs-1 fw-bold text-center mb-4 mt-5" style={{fontFamily: 'Merriweather'}}>Our Expert Instructor</h2>
+      <PagesHeader title="Instructors" sub="Instructors" />
+      <h2
+        className="fs-1 fw-bold text-center mb-4 mt-5"
+        style={{ fontFamily: "Merriweather" }}
+      >
+        Our Expert Instructor
+      </h2>
 
       <Container>
-      {isLoading && (
-          <Loading />
-        )}
+        {isLoading && <Loading />}
         {/* Instructor data loading */}
         <Row>
           {instructors.map((instructor) => (

@@ -28,12 +28,15 @@ const CourseDetails = () => {
   const { data: course = {}, isLoading } = useQuery({
     queryKey: ["course"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/course/${courseId}`);
+      const res = await fetch(
+        `https://e-learning-app-i5dn.onrender.com/course/${courseId}`
+      );
       const data = res.json();
       return data;
     },
   });
-  const { img, title, description, category, price, rating, hours, minutes } = course;
+  const { img, title, description, category, price, rating, hours, minutes } =
+    course;
 
   const handleCart = () => {
     dispatch({
@@ -93,7 +96,9 @@ const CourseDetails = () => {
         <Row>
           <Col lg={8} md={12} sm={12}>
             <Image className="img-fluid" src={img} alt="Course" />
-            <h3 className="my-3" style={{fontFamily: 'Merriweather'}}>About Course</h3>
+            <h3 className="my-3" style={{ fontFamily: "Merriweather" }}>
+              About Course
+            </h3>
             <p style={{ lineHeight: "25px" }}>{description}</p>
           </Col>
           <Col lg={4} md={12} sm={12}>
@@ -124,7 +129,7 @@ const CourseDetails = () => {
               )}
             </div>
             <div className="bg-white p-5 shadow rounded">
-              <h3 style={{fontFamily: 'Merriweather'}}>Material Includes</h3>
+              <h3 style={{ fontFamily: "Merriweather" }}>Material Includes</h3>
               <ul>
                 <li>
                   {hours} hours {minutes} minutes

@@ -13,52 +13,56 @@ const AddInstructor = () => {
   const imageHostingKey = process.env.REACT_APP_imgbb_key;
 
   // Get all data in the form and send it to the database
-  const handleInstructor = (data) =>{
+  const handleInstructor = (data) => {
     const image = data.img[0];
     const formData = new FormData();
-    formData.append('image', image);
+    formData.append("image", image);
 
     // Send image in the imgbb and get the image link
-    const url = `https://api.imgbb.com/1/upload?&key=${imageHostingKey}`
+    const url = `https://api.imgbb.com/1/upload?&key=${imageHostingKey}`;
     fetch(url, {
-      method: 'POST',
-      body: formData
+      method: "POST",
+      body: formData,
     })
-    .then(response => response.json())
-    .then(imgData =>{
-      // took all data and create a object that send to the database
-      if(imgData.success){
-        const instructor = {
-          name: data.name,
-          email: data.email,
-          img: imgData.data.url,
-          subject: data.subject,
-          number: data.number,
-          about: data.about,
-          Degree: data.Degree,
-          education: data.education,
-          experience: data.experience
+      .then((response) => response.json())
+      .then((imgData) => {
+        // took all data and create a object that send to the database
+        if (imgData.success) {
+          const instructor = {
+            name: data.name,
+            email: data.email,
+            img: imgData.data.url,
+            subject: data.subject,
+            number: data.number,
+            about: data.about,
+            Degree: data.Degree,
+            education: data.education,
+            experience: data.experience,
+          };
+          fetch("https://e-learning-app-i5dn.onrender.com/instructors", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(instructor),
+          })
+            .then((res) => res.json())
+            .then((result) => {
+              toast.success(`${data.name} added successfully`);
+              reset();
+            });
         }
-        fetch('http://localhost:5000/instructors', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(instructor)
-        })
-        .then(res => res.json())
-        .then(result => {
-          toast.success(`${data.name} added successfully`)
-          reset()
-        })
-      }
-    })
-    
-  }
+      });
+  };
 
   return (
-    <div className="shadow rounded" style={{background: "#fff"}}>
-      <h2 className="fs-2 fw-bold text-center pt-4" style={{fontFamily: 'Merriweather'}}>Add Instructor</h2>
+    <div className="shadow rounded" style={{ background: "#fff" }}>
+      <h2
+        className="fs-2 fw-bold text-center pt-4"
+        style={{ fontFamily: "Merriweather" }}
+      >
+        Add Instructor
+      </h2>
       <Row>
         <div
           className="d-flex justify-content-center"
@@ -71,7 +75,6 @@ const AddInstructor = () => {
                 borderRadius: "20px",
               }}
             >
-              
               {/* Instructor Form */}
               <Form onSubmit={handleSubmit(handleInstructor)}>
                 <Form.Group className="mb-3" controlId="formBasicFirstName">
@@ -125,7 +128,6 @@ const AddInstructor = () => {
                     type="text"
                     {...register("number", {
                       required: true,
-                      
                     })}
                     placeholder="Number"
                   />
@@ -141,7 +143,6 @@ const AddInstructor = () => {
                     size="lg"
                     {...register("img", {
                       required: true,
-                      
                     })}
                   />
                   {errors.img && (
@@ -156,10 +157,9 @@ const AddInstructor = () => {
                     rows={3}
                     {...register("education", {
                       required: true,
-                      
                     })}
                     placeholder="Education"
-                    style={{resize: 'none'}}
+                    style={{ resize: "none" }}
                   />
                   {errors.education && (
                     <span className="text-danger">This field is required</span>
@@ -173,10 +173,9 @@ const AddInstructor = () => {
                     rows={3}
                     {...register("experience", {
                       required: true,
-                      
                     })}
                     placeholder="Experience"
-                    style={{resize: 'none'}}
+                    style={{ resize: "none" }}
                   />
                   {errors.experience && (
                     <span className="text-danger">This field is required</span>
@@ -190,10 +189,9 @@ const AddInstructor = () => {
                     rows={3}
                     {...register("Degree", {
                       required: true,
-                      
                     })}
                     placeholder="Degree"
-                    style={{resize: 'none'}}
+                    style={{ resize: "none" }}
                   />
                   {errors.Degree && (
                     <span className="text-danger">This field is required</span>
@@ -209,7 +207,7 @@ const AddInstructor = () => {
                       required: true,
                     })}
                     placeholder="About"
-                    style={{resize: 'none'}}
+                    style={{ resize: "none" }}
                   />
                   {errors.about && (
                     <span className="text-danger">This field is required</span>

@@ -7,7 +7,7 @@ const MyProfile = () => {
   const [userInfo, setUserInfo] = useState({});
 
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user?.email}`)
+    fetch(`https://e-learning-app-i5dn.onrender.com/users/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setUserInfo(data));
   }, [user.email]);
@@ -28,7 +28,12 @@ const MyProfile = () => {
                 }}
               >
                 {/* Form header and login Form data */}
-                <h2 className="fs-2 mb-4" style={{fontFamily: 'Merriweather'}}>My Profile</h2>
+                <h2
+                  className="fs-2 mb-4"
+                  style={{ fontFamily: "Merriweather" }}
+                >
+                  My Profile
+                </h2>
                 <Form.Group className="mb-3" controlId="formName">
                   <Form.Label>Name</Form.Label>
                   <Form.Control

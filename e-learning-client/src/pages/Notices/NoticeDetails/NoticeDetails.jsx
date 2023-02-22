@@ -14,14 +14,16 @@ const NoticeDetails = () => {
   const { data: notice = {}, isLoading } = useQuery({
     queryKey: ["notices"],
     queryFn: async () => {
-      const res = await fetch(`http://localhost:5000/notices/${noticeId}`);
+      const res = await fetch(
+        `https://e-learning-app-i5dn.onrender.com/notices/${noticeId}`
+      );
       const data = await res.json();
       return data;
     },
   });
 
   useEffect(() => {
-    fetch("http://localhost:5000/notices/recentNotice")
+    fetch("https://e-learning-app-i5dn.onrender.com/notices/recentNotice")
       .then((res) => res.json())
       .then((data) => setRecentPost(data));
   }, []);
@@ -68,7 +70,10 @@ const NoticeDetails = () => {
               <div className="p-4 rounded bg-white ">
                 <h4 className="mb-4">Recent Posts</h4>
                 {recentPost?.map((post) => (
-                  <div className="d-flex align-items-center mb-3" key={post._id}>
+                  <div
+                    className="d-flex align-items-center mb-3"
+                    key={post._id}
+                  >
                     <Link
                       to={`/notice/${post._id}`}
                       className="text-black text-decoration-none"
