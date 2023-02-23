@@ -24,7 +24,7 @@ const Categories = () => {
         <Row className="py-4">
           {/* Category Card */}
           <Category img={business} title="Business" courses="3 Courses" />
-          <Category img={health} title="Health & Fitness" courses="2 Courses" />
+          <Category img={health} title="Health" courses="2 Courses" />
           <Category img={design} title="Design" courses="3 Courses" />
           <Category img={development} title="Development" courses="3 Courses" />
         </Row>

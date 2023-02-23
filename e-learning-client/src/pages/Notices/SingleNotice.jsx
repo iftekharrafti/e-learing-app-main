@@ -26,6 +26,7 @@ const SingleNotice = ({ notice }) => {
               style={{
                 borderTopLeftRadius: "10px",
                 borderTopRightRadius: "10px",
+                width: '100%'
               }}
             />
           </Link>

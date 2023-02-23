@@ -8,9 +8,12 @@ import "../RemoveFocus.css";
 import Loading from "../../Components/Loading/Loading";
 import { CourseContext } from "../../contexts/CourseProvider";
 import { actionTypes } from "../../state/actionTypes";
+import Pagination from "../../Components/Pagination/Pagination";
 
 const Courses = () => {
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1)
+  const [coursesPerPage] = useState(9);
   // Get data from the global state
   const { state, dispatch } = useContext(CourseContext);
 
@@ -26,6 +29,9 @@ const Courses = () => {
   //   }))
   // ]
   // console.log(uniqueList);
+
+  const indexOfLastPost = currentPage * coursesPerPage;
+  const indexOfFirstPost = indexOfLastPost - coursesPerPage;
 
   return (
     <div style={{ background: "#EDF0F2" }}>
@@ -78,10 +84,12 @@ const Courses = () => {
                 return course;
               }
             })
+            .slice(indexOfFirstPost, indexOfLastPost)
             .map((course) => (
               <Course key={course._id} course={course} />
             ))}
         </Row>
+        <Pagination coursesPerPage={coursesPerPage} totalPosts={state.courses.length} setCurrentPage={setCurrentPage}  />
       </Container>
     </div>
   );
