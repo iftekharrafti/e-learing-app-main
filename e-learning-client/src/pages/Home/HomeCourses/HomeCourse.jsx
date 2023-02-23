@@ -39,9 +39,16 @@ const HomeCourse = ({ course }) => {
   };
 
   // Bookmark icons handle
-  const handleBookmark = () => {
+  const addedBookmark = () => {
     dispatch({ type: actionTypes.ADD_TO_BOOKMARK, payload: course });
-    toast.success("Added To Bookmark");
+    toast.success("Course added Bookmark");
+  };
+  const removeBookmark = () => {
+    const remove = window.confirm("Are you sure, you want to remove the course on Bookmark?")
+    if(remove){
+      dispatch({ type: actionTypes.REMOVE_BOOKMARK, payload: course._id });
+      toast.success("Course Remove to Bookmark");
+    }
   };
 
   // Cart icons handle
@@ -72,14 +79,14 @@ const HomeCourse = ({ course }) => {
               <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" />
             </Link>
             {bookmarkIdArray.includes(course._id)  ? (
-              <button style={bookMark} onClick={handleBookmark} disabled>
+              <button style={bookMark} onClick={removeBookmark}>
                 <FontAwesomeIcon
                   icon={solidBookmark}
                   style={{ color: "#3e64de" }}
                 />
               </button>
             ) : (
-              <button style={bookMark} onClick={handleBookmark}>
+              <button style={bookMark} onClick={addedBookmark}>
                 <FontAwesomeIcon
                   icon={regularBookmark}
                   style={{ color: "#3e64de" }}

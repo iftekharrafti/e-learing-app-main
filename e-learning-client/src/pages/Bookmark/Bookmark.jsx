@@ -27,6 +27,14 @@ const Bookmark = () => {
     toast.success("Course Added to Cart");
   };
 
+  const removeBookmark = (id) => {
+    const remove = window.confirm("Are you sure, you want to remove the course on Bookmark?")
+    if(remove){
+      dispatch({ type: actionTypes.REMOVE_BOOKMARK, payload: id });
+      toast.success("Course Remove to Bookmark");
+    }
+  };
+
   // Bookmark e je course gulo add kora hoiche tar id gulo array akare niye nicci....
   const bookmarkIdArray = state.bookmark.map(bookmark => bookmark._id)
 
@@ -104,12 +112,7 @@ const Bookmark = () => {
                       </td>
                       <td>
                         <Button
-                          onClick={() =>
-                            dispatch({
-                              type: actionTypes.REMOVE_BOOKMARK,
-                              payload: course._id,
-                            })
-                          }
+                          onClick={() => removeBookmark(course._id)}
                         >
                           Remove
                         </Button>{" "}

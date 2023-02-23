@@ -48,10 +48,17 @@ const CourseDetails = () => {
     toast.success("Course Added to Cart");
   };
 
-  // Handle to cart
-  const handleBookmark = () => {
+  // Handle Bookmark
+  const addedBookmark = () => {
     dispatch({ type: actionTypes.ADD_TO_BOOKMARK, payload: course });
-    toast.success("Added To Bookmark");
+    toast.success("Course added Bookmark");
+  };
+  const removeBookmark = () => {
+    const remove = window.confirm("Are you sure, you want to remove the course on Bookmark?")
+    if(remove){
+      dispatch({ type: actionTypes.REMOVE_BOOKMARK, payload: course._id });
+      toast.success("Course Remove to Bookmark");
+    }
   };
 
   // Checking whether the data is in cart or checked out
@@ -83,14 +90,14 @@ const CourseDetails = () => {
           </div>
           <div className="d-flex align-items-center">
             {bookmarkIdArray.includes(course._id)  ? (
-              <button className="d-flex align-items-center border-0 " disabled>
+              <button className="d-flex align-items-center border-0 " onClick={removeBookmark}>
                 <FontAwesomeIcon icon={solidBookmark} />
                 <p className="ms-2 mb-0">Wishlist</p>
               </button>
             ) : (
               <button
                 className="d-flex align-items-center border-0 "
-                onClick={handleBookmark}
+                onClick={addedBookmark}
               >
                 <FontAwesomeIcon icon={regularBookmark} />
                 <p className="ms-2 mb-0">Wishlist</p>

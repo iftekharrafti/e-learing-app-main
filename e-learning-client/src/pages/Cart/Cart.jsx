@@ -10,7 +10,7 @@ const Cart = () => {
   const { state, dispatch } = useContext(CourseContext);
 
   const handleDelete = (course) => {
-    const deletedItem = window.confirm("Are you sure, you want to delete this item?")
+    const deletedItem = window.confirm("Are you sure, you want to remove the course on Cart?")
 
     if(deletedItem){
       dispatch({
