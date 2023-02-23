@@ -20,12 +20,12 @@ const Courses = () => {
     dispatch({ type: actionTypes.SORTING_VALUE, payload: selectedValue });
   };
 
-  const uniqueList = [
-    ...new Set(state.courses?.map((curelm) => {
-      return curelm.category
-    }))
-  ]
-  console.log(uniqueList);
+  // const uniqueList = [
+  //   ...new Set(state.courses?.map((curelm) => {
+  //     return curelm.category
+  //   }))
+  // ]
+  // console.log(uniqueList);
 
   return (
     <div style={{ background: "#EDF0F2" }}>

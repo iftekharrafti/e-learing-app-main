@@ -22,7 +22,7 @@ const Login = () => {
     .then(userCredential =>{
       console.log(userCredential.user);
       toast.success("Login Successfull");
-      navigate('/dashboard');
+      navigate('/');
     })
     .catch(error =>{
       console.log(error.message);

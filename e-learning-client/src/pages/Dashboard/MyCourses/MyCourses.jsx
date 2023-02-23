@@ -22,8 +22,6 @@ const MyCourses = () => {
             <tr>
               <th>Image</th>
               <th>Title</th>
-              <th>Price</th>
-              <th>Remove</th>
             </tr>
           </thead>
           <tbody>
@@ -46,30 +44,8 @@ const MyCourses = () => {
                     {course.title}
                   </Link>
                 </td>
-                <td className="fw-bold">${course.price}</td>
-                <td>
-                  <Button
-                    onClick={() =>
-                      dispatch({
-                        type: actionTypes.REMOVE_CART,
-                        payload: course._id,
-                        price: course.price,
-                      })
-                    }
-                  >
-                    Remove
-                  </Button>{" "}
-                </td>
               </tr>
           ))}
-          <tr>
-            <td></td>
-            <td className="text-right">Total</td>
-            <td className="fw-bold">
-              ${state.checkoutTotal}
-            </td>
-            <td></td>
-          </tr>
           </tbody>
         </Table>
       ) : (

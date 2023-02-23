@@ -8,6 +8,19 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { state, dispatch } = useContext(CourseContext);
+
+  const handleDelete = (course) => {
+    const deletedItem = window.confirm("Are you sure, you want to delete this item?")
+
+    if(deletedItem){
+      dispatch({
+        type: actionTypes.REMOVE_CART,
+        payload: course._id,
+        price: course.price,
+      })
+    }
+  }
+
   return (
     <div style={{ padding: "0 0 50px 0" }}>
       <Container>
@@ -51,13 +64,7 @@ const Cart = () => {
                       <td>${course.price}</td>
                       <td>
                         <Button
-                          onClick={() =>
-                            dispatch({
-                              type: actionTypes.REMOVE_CART,
-                              payload: course._id,
-                              price: course.price,
-                            })
-                          }
+                          onClick={() => handleDelete(course)}
                         >
                           Remove
                         </Button>{" "}

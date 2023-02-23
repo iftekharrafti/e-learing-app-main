@@ -27,6 +27,12 @@ const Bookmark = () => {
     toast.success("Course Added to Cart");
   };
 
+  // Bookmark e je course gulo add kora hoiche tar id gulo array akare niye nicci....
+  const bookmarkIdArray = state.bookmark.map(bookmark => bookmark._id)
+
+  // Bookmark er id gulor sathe mil ache emn cart and checkout er id gulo array akare niye nicci
+  const cartCheckoutIdArray = bookmarkIdArray.filter(id => state.cart.concat(state.checkout).some(course => course._id === id));
+
   return (
     <div style={{ padding: "0 0 50px 0" }}>
       <Container>
@@ -53,6 +59,7 @@ const Bookmark = () => {
                     <th>Remove</th>
                   </tr>
                 </thead>
+
                 {state.bookmark.map((course) => (
                   <tbody key={course._id}>
                     <tr>
@@ -75,6 +82,16 @@ const Bookmark = () => {
                       </td>
                       <td>${course.price}</td>
                       <td>
+                        {/* Course id ta mile gele disabled nahoy abled */}
+                        {
+                          cartCheckoutIdArray.includes(course._id) ? <Button disabled>
+                          <FontAwesomeIcon
+                            className="me-2"
+                            icon={faCartShopping}
+                          />
+                          Add To Cart
+                        </Button>
+                        : 
                         <Button onClick={() => handleCart(course)}>
                           <FontAwesomeIcon
                             className="me-2"
@@ -82,6 +99,8 @@ const Bookmark = () => {
                           />
                           Add To Cart
                         </Button>
+                        }
+                        
                       </td>
                       <td>
                         <Button

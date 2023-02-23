@@ -8,7 +8,7 @@ import {
   faStar as solidStar,
   faBookmark as solidBookmark,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Rating from "react-rating";
 import PagesHeader from "../../Components/PagesHeader/PagesHeader";
 import { Button, Col, Container, Image, Row } from "react-bootstrap";
@@ -21,10 +21,9 @@ import Loading from "../../Components/Loading/Loading";
 
 const CourseDetails = () => {
   const { courseId } = useParams();
-  const [cart, setCart] = useState(false);
-  const [bookmark, setBookmark] = useState(false);
-  const { dispatch } = useContext(CourseContext);
+  const { state, dispatch } = useContext(CourseContext);
 
+  // To get specific data from the database
   const { data: course = {}, isLoading } = useQuery({
     queryKey: ["course"],
     queryFn: async () => {
@@ -35,24 +34,31 @@ const CourseDetails = () => {
       return data;
     },
   });
+  // De structure all data
   const { img, title, description, category, price, rating, hours, minutes } =
     course;
 
+    // Add to cart 
   const handleCart = () => {
     dispatch({
       type: actionTypes.ADD_TO_CART,
       payload: course,
       price: course.price,
     });
-    setCart(true);
     toast.success("Course Added to Cart");
   };
 
+  // Handle to cart
   const handleBookmark = () => {
     dispatch({ type: actionTypes.ADD_TO_BOOKMARK, payload: course });
-    setBookmark(true);
     toast.success("Added To Bookmark");
   };
+
+  // Checking whether the data is in cart or checked out
+  const idMatching = state.cart.some(course => course._id === courseId) || state.checkout.some(course => course._id === courseId);
+
+  // Get Bookmark array id 
+  const bookmarkIdArray = state.bookmark.map(course => course._id);
 
   return (
     <div style={{ background: "#EDF0F2", padding: "0 0 50px 0" }}>
@@ -76,8 +82,8 @@ const CourseDetails = () => {
             </p>
           </div>
           <div className="d-flex align-items-center">
-            {bookmark ? (
-              <button className="d-flex align-items-center border-0 ">
+            {bookmarkIdArray.includes(course._id)  ? (
+              <button className="d-flex align-items-center border-0 " disabled>
                 <FontAwesomeIcon icon={solidBookmark} />
                 <p className="ms-2 mb-0">Wishlist</p>
               </button>
@@ -104,16 +110,18 @@ const CourseDetails = () => {
           <Col lg={4} md={12} sm={12}>
             <div className="bg-white p-5 mb-4 shadow rounded">
               <h3>${price}</h3>
-              {cart ? (
+
+              {idMatching ? (
                 <>
                   <Link to="/cart" className=" text-decoration-none">
                     {" "}
                     <Button
                       style={{ width: "100%", marginTop: "20px" }}
                       variant="primary"
+                      disabled
                     >
                       <FontAwesomeIcon className="me-2" icon={faCartShopping} />
-                      Go to cart
+                      Add to Cart
                     </Button>{" "}
                   </Link>
                 </>

@@ -20,10 +20,8 @@ import Zoom from "react-reveal/Zoom";
 const HomeCourse = ({ course }) => {
   const { _id, img, title, price, rating } = course;
   const [newRating, setNewRating] = useState(rating);
-  const [bookmark, setBookmark] = useState(false);
-  const [cart, setCart] = useState(false);
 
-  const { dispatch } = useContext(CourseContext);
+  const { state, dispatch } = useContext(CourseContext);
 
   const bookMark = {
     width: "30px",
@@ -43,7 +41,6 @@ const HomeCourse = ({ course }) => {
   // Bookmark icons handle
   const handleBookmark = () => {
     dispatch({ type: actionTypes.ADD_TO_BOOKMARK, payload: course });
-    setBookmark(true);
     toast.success("Added To Bookmark");
   };
 
@@ -54,9 +51,16 @@ const HomeCourse = ({ course }) => {
       payload: course,
       price: course.price,
     });
-    setCart(true);
     toast.success("Course Added to Cart");
   };
+
+  // Cart and checkout e je course gulo add kora hoiche tar id gulo array akare niye segula ke ekta array kora hocche....
+  const cartIdArray = state.cart.map(course => course._id);
+  const checkoutIdArray = state.checkout.map(course => course._id);
+  const cartCheckoutIdArray = cartIdArray.concat(checkoutIdArray)
+
+  // Get Bookmark id
+  const bookmarkIdArray = state.bookmark.map(course => course._id);
 
   return (
     <Col lg={4} md={6} sm={12} xs={12}>
@@ -67,7 +71,7 @@ const HomeCourse = ({ course }) => {
             <Link to={`/course/${_id}`}>
               <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" />
             </Link>
-            {bookmark ? (
+            {bookmarkIdArray.includes(course._id)  ? (
               <button style={bookMark} onClick={handleBookmark} disabled>
                 <FontAwesomeIcon
                   icon={solidBookmark}
@@ -107,7 +111,7 @@ const HomeCourse = ({ course }) => {
             <hr />
             <div className="d-flex justify-content-between">
               <h5 className="text-primary">${price}</h5>
-              {cart ? (
+              {cartCheckoutIdArray.includes(course._id) ? (
                 <Button
                   className="me-2"
                   style={{
@@ -115,12 +119,13 @@ const HomeCourse = ({ course }) => {
                     border: "1px solid #377dff",
                     color: "#377dff",
                   }}
+                  disabled
                 >
                   
                   {/* Cart icons here */}
                   <Link to="/cart" className=" text-decoration-none">
                     <FontAwesomeIcon className="me-2" icon={faCartShopping} />
-                    Go to cart
+                    Added Cart
                   </Link>
                 </Button>
               ) : (
