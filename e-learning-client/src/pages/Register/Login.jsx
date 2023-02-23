@@ -82,7 +82,9 @@ const Login = () => {
                       </span>
                     )}
                   </Form.Group>
-                  <p>Forgot Password?</p>
+                  <Link to="/resetPassword">
+                    <p>Forgot Password?</p>
+                  </Link>
                   <Button
                     size="lg"
                     variant="primary"

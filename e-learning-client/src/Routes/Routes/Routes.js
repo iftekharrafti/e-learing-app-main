@@ -22,6 +22,8 @@ import AddCourse from "../../pages/Dashboard/AddCourse/AddCourse";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import MyProfile from "../../pages/Dashboard/MyProfile/MyProfile";
 import NoticeDetails from "../../pages/Notices/NoticeDetails/NoticeDetails";
+import CategoryCourse from "../../pages/CategoryCourse/CategoryCourse";
+import ForgotPassword from "../../pages/Register/ForgotPassword";
 
 const router = createBrowserRouter([
     {
@@ -39,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/course/:courseId',
                 element: <CourseDetails />
+            },
+            {
+                path: '/category/:categoryTitle',
+                element: <CategoryCourse />
             },
             {
                 path: '/about',
@@ -83,6 +89,10 @@ const router = createBrowserRouter([
             {
                 path: '/login',
                 element: <Login />
+            },
+            {
+                path: '/resetPassword',
+                element: <ForgotPassword />
             },
         ]
     },
