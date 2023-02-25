@@ -13,15 +13,19 @@ const Pagination = ({ coursesPerPage, totalPosts, setCurrentPage }) => {
     pageNumbers.push(i);
   }
 
+//   When page change then new course are show
   const handlePage = (pageNumber) => {
     setCurrentPage(pageNumber);
     setNewPage(pageNumber);
   };
 
+//   When >> click then increment page number
   const incrementPage = () => {
     setCurrentPage(newPage + 1);
     setNewPage(newPage + 1);
   };
+
+  //   When << click then decrement page number
   const decrementPage = () => {
     setCurrentPage(newPage - 1);
     setNewPage(newPage - 1);
@@ -29,6 +33,7 @@ const Pagination = ({ coursesPerPage, totalPosts, setCurrentPage }) => {
 
   return (
     <div className="d-flex justify-content-center pt-3 pb-5">
+        {/* Decrement Button */}
       {newPage === 1 ? (
         <Button variant="primary" className="py-2 px-3 me-3" disabled>
           <FontAwesomeIcon icon={faAnglesLeft} />
@@ -42,6 +47,8 @@ const Pagination = ({ coursesPerPage, totalPosts, setCurrentPage }) => {
           <FontAwesomeIcon icon={faAnglesLeft} />
         </Button>
       )}
+
+      {/* All number button */}
       {pageNumbers.map((pageNumber) => (
         <Button
           onClick={() => handlePage(pageNumber)}
@@ -51,6 +58,8 @@ const Pagination = ({ coursesPerPage, totalPosts, setCurrentPage }) => {
           {pageNumber}
         </Button>
       ))}
+
+      {/* Decrement button */}
       {newPage === totalPages ? (
         <Button variant="primary" className="py-2 px-3 me-3" disabled>
           <FontAwesomeIcon icon={faAnglesRight} />

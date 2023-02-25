@@ -2,13 +2,15 @@ import { actionTypes } from "./actionTypes";
 
 export const initialState = {
   courses: [],
+  filterCourses:[],
   cart: [],
   bookmark: [],
   checkout: [],
   subTotal: 0,
   checkoutTotal: 0,
   loading: false,
-  sorting_value: ""
+  sorting_value: "",
+  category_value: ""
 };
 
 export const courseReducer = (state, action) => {
@@ -22,6 +24,7 @@ export const courseReducer = (state, action) => {
       return {
         ...state,
         courses: action.payload,
+        filterCourses: action.payload,
         loading: false,
       }
 
@@ -98,7 +101,28 @@ export const courseReducer = (state, action) => {
 
       return {
         ...state,
-        courses: newSortData 
+        filterCourses: newSortData 
+      }
+
+    case actionTypes.FILTER_CATEGORY_VALUE:
+      return{
+        ...state,
+        category_value: action.payload
+      }
+
+    case actionTypes.FILTER_CATEGORY:
+      let newFilterCourse;
+      let tempFilterCourse = [...action.payload];
+
+      if(state.category_value === 'All'){
+        newFilterCourse = action.payload
+        
+      }else{
+        newFilterCourse = tempFilterCourse.filter(course => course.category === state.category_value)
+      }
+      return {
+        ...state,
+        filterCourses: newFilterCourse
       }
 
     default:

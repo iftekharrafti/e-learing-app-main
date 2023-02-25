@@ -22,6 +22,11 @@ const CourseProvider = ({ children }) => {
     dispatch({ type: actionTypes.SORTING_COURSE, payload: state.courses });
   }, [state.sorting_value]);
 
+  
+  useEffect(() =>{
+    dispatch({ type: actionTypes.FILTER_CATEGORY, payload: state.courses });
+  },[state.category_value])
+
   const course_info = {
     state,
     dispatch,

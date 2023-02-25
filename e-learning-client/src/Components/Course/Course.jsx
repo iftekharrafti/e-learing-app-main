@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { CourseContext } from "../../contexts/CourseProvider";
 import { actionTypes } from "../../state/actionTypes";
 import Zoom from "react-reveal/Zoom";
+import './Course.css';
 
 const Course = ({ course }) => {
   const { _id, img, title, price, rating } = course;
@@ -70,9 +71,9 @@ const Course = ({ course }) => {
   const bookmarkIdArray = state.bookmark.map(course => course._id);
 
   return (
-    <Col lg={4} md={6} sm={12} xs={12}>
+    <Col lg={6} md={12} sm={12} xs={12}>
       <Zoom>
-        <div className="shadow mb-4 rounded" style={{maxHeight: '440px', overFlow: 'hidden'}} >
+        <div className="course shadow mb-4 rounded" >
           {/* Course Card are here */}
           <div style={{ position: "relative" }}>
             {/* Course Image and pass the id are routes and singleCourseDetails */}

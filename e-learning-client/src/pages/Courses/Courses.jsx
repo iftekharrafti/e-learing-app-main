@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Container, Form, InputGroup, Row } from "react-bootstrap";
+import { Col, Container, Form, InputGroup, Row } from "react-bootstrap";
 import PagesHeader from "../../Components/PagesHeader/PagesHeader";
 import Course from "../../Components/Course/Course";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,11 +9,12 @@ import Loading from "../../Components/Loading/Loading";
 import { CourseContext } from "../../contexts/CourseProvider";
 import { actionTypes } from "../../state/actionTypes";
 import Pagination from "../../Components/Pagination/Pagination";
+import './courses.css'
 
 const Courses = () => {
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(1)
-  const [coursesPerPage] = useState(9);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [coursesPerPage] = useState(6);
   // Get data from the global state
   const { state, dispatch } = useContext(CourseContext);
 
@@ -23,13 +24,21 @@ const Courses = () => {
     dispatch({ type: actionTypes.SORTING_VALUE, payload: selectedValue });
   };
 
-  // const uniqueList = [
-  //   ...new Set(state.courses?.map((curelm) => {
-  //     return curelm.category
-  //   }))
-  // ]
-  // console.log(uniqueList);
+  const uniqueList = [
+    ...new Set(
+      state.courses.map((curelm) => {
+        return curelm.category;
+      })
+    ),
+  ];
+  const newUniqueList = ['All', ...uniqueList];
 
+  const handleCategory = (category) => {
+    dispatch({ type: actionTypes.FILTER_CATEGORY_VALUE, payload: category });
+  };
+
+
+  // Pagination er jonno
   const indexOfLastPost = currentPage * coursesPerPage;
   const indexOfFirstPost = indexOfLastPost - coursesPerPage;
 
@@ -77,19 +86,42 @@ const Courses = () => {
         {/* Courses Data get from the global State */}
         {/* Global state get courses data from the server */}
         <Row>
-          {state.courses
-            ?.filter((course) => {
-              if (search === "") return course;
-              if (course.title.toLowerCase().includes(search.toLowerCase())) {
-                return course;
-              }
-            })
-            .slice(indexOfFirstPost, indexOfLastPost)
-            .map((course) => (
-              <Course key={course._id} course={course} />
-            ))}
+          <Row>
+            <Col lg={3} md={4} className="mb-4">
+              <h3>Category</h3>
+
+              {newUniqueList.map((category, index) => (
+                <div className="d-flex align-items-center">
+              <input onChange={() =>handleCategory(category)} type="radio" name="category" id={category} style={{width: '25px', height: '25px'}} />
+              <label for={category} style={{fontSize: '22px', fontWeight: 'bold', marginLeft: '10px'}}>{category}</label>
+              </div>
+              ))}
+            </Col>
+            <Col lg={9} md={8}>
+              <Row>
+              {
+              state.filterCourses
+                ?.filter((course) => {
+                  if (search === "") return course;
+                  if (
+                    course.title.toLowerCase().includes(search.toLowerCase())
+                  ) {
+                    return course;
+                  }
+                })
+                .slice(indexOfFirstPost, indexOfLastPost)
+                .map((course) => (
+                  <Course key={course._id} course={course} />
+                ))}
+              </Row>
+            </Col>
+          </Row>
         </Row>
-        <Pagination coursesPerPage={coursesPerPage} totalPosts={state.courses.length} setCurrentPage={setCurrentPage}  />
+        <Pagination
+          coursesPerPage={coursesPerPage}
+          totalPosts={state.courses.length}
+          setCurrentPage={setCurrentPage}
+        />
       </Container>
     </div>
   );
