@@ -51,6 +51,30 @@ async function run() {
       res.send(options);
     });
 
+    // Course post
+    app.post('/courses', async (req, res) =>{
+      const course = req.body;
+      console.log(course)
+      const result = await courses.insertOne(course);
+      res.send(result);
+    })
+
+    // Course update
+    app.put("/course/:id", async (req, res) => {
+      const id = req.params.id;
+      console.log(id)
+      const {title, price, category, rating, description} = req.body;
+      const query = { _id: new ObjectId(id) };
+      const updateDoc = {
+        $set:{
+          title, price, category, rating, description
+        }
+      }
+      const result = await courses.updateOne(query, updateDoc);
+      console.log('course update successful')
+      res.send(result);
+    });
+
     // Course Delete
     app.delete("/course/:id", async (req, res) => {
       const id = req.params.id;
@@ -59,13 +83,7 @@ async function run() {
       res.send(options);
     })
 
-    // Course post
-    app.post('/courses', async (req, res) =>{
-      const course = req.body;
-      console.log(course)
-      const result = await courses.insertOne(course);
-      res.send(result);
-    })
+    
 
     // All Instructors get from the database
     app.get("/instructors", async (req, res) => {

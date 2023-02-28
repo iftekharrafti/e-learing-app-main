@@ -75,10 +75,10 @@ const Course = ({ course }) => {
       <Zoom>
         <div className="course shadow mb-4 rounded" >
           {/* Course Card are here */}
-          <div style={{ position: "relative" }}>
+          <div className="courseImg" style={{ position: "relative" }}>
             {/* Course Image and pass the id are routes and singleCourseDetails */}
             <Link to={`/course/${_id}`}>
-              <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" style={{height: '220px', width:'100%'}} />
+              <Image src={img} className="imgHover img-fluid rounded-top rounded-right" alt="course" style={{height: '220px', width:'100%'}} />
             </Link>
 
             {/* Bookmark icon */}

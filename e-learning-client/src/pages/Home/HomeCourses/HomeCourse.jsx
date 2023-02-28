@@ -16,6 +16,7 @@ import { Link } from "react-router-dom";
 import { CourseContext } from "../../../contexts/CourseProvider";
 import { actionTypes } from "../../../state/actionTypes";
 import Zoom from "react-reveal/Zoom";
+import './HomeCourse.css'
 
 const HomeCourse = ({ course }) => {
   const { _id, img, title, price, rating } = course;
@@ -74,9 +75,9 @@ const HomeCourse = ({ course }) => {
       <Zoom>
         <div className="shadow mb-4 rounded">
           {/* Bookmark icons here */}
-          <div style={{ position: "relative" }}>
+          <div className="courseImg" style={{ position: "relative" }}>
             <Link to={`/course/${_id}`}>
-              <Image src={img} className="img-fluid rounded-top rounded-right" alt="course" />
+              <Image src={img} className="imgHover img-fluid rounded-top rounded-right" alt="course" />
             </Link>
             {bookmarkIdArray.includes(course._id)  ? (
               <button style={bookMark} onClick={removeBookmark}>

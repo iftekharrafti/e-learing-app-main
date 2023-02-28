@@ -1,12 +1,16 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Button, Image, Table } from "react-bootstrap";
 import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 import { CourseContext } from "../../../contexts/CourseProvider";
 import { actionTypes } from "../../../state/actionTypes";
+import EditCourse from "./EditCourse/EditCourse";
 
 const AllCourses = () => {
   const { state, dispatch } = useContext(CourseContext);
+  const [modalShow, setModalShow] = useState(false);
+  const [editId, setEditId] = useState('');
+  console.log(editId);
 
   const handleCourseDelete = async (id) => {
     const deletedItem = window.confirm(
@@ -78,7 +82,7 @@ const AllCourses = () => {
               </td>
               <td>${course.price}</td>
               <td>
-                <Button variant="primary">Edit</Button>
+                <Button variant="primary"  onClick={() => {setModalShow(true); setEditId(course._id)}}>Edit</Button>
               </td>
               <td>
                 <Button
@@ -90,6 +94,7 @@ const AllCourses = () => {
               </td>
             </tr>
           ))}
+          <EditCourse show={modalShow} onHide={() => setModalShow(false)} editId={editId} />
         </tbody>
       </Table>
     </div>
