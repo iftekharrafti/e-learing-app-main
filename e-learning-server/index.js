@@ -51,6 +51,14 @@ async function run() {
       res.send(options);
     });
 
+    // Course Delete
+    app.delete("/course/:id", async (req, res) => {
+      const id = req.params.id;
+      const query = { _id: new ObjectId(id)}
+      const options = await courses.deleteOne(query);
+      res.send(options);
+    })
+
     // Course post
     app.post('/courses', async (req, res) =>{
       const course = req.body;

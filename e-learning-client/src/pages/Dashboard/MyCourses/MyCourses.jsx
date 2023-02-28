@@ -1,14 +1,13 @@
 import React, { useContext } from "react";
-import { Button, Image, Table } from "react-bootstrap";
+import { Image, Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import PrimaryButton from "../../../Components/PrimaryButton";
 import { CourseContext } from "../../../contexts/CourseProvider";
-import { actionTypes } from "../../../state/actionTypes";
 import emptyCart from "../../../assets/photos/empty-shopping-cart.jpg";
 import "./MyCourse.css";
 
 const MyCourses = () => {
-  const { state, dispatch } = useContext(CourseContext);
+  const { state } = useContext(CourseContext);
 
   return (
     <div className="shadow rounded" style={{ background: "#fff" }}>

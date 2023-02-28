@@ -42,6 +42,10 @@ const Dashboard = () => {
               </li>
               <hr />
               <li className="mb-3">
+                <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/allCourses">All Courses</NavLink>
+              </li>
+              <hr />
+              <li className="mb-3">
                 <NavLink className="text-decoration-none text-black fs-4 fw-bold" to="/dashboard/allUsers">Users</NavLink>
               </li>
               </>}

@@ -125,6 +125,13 @@ export const courseReducer = (state, action) => {
         filterCourses: newFilterCourse
       }
 
+    case actionTypes.DELETE_COURSE:
+      return {
+        ...state,
+        courses: state.courses.filter(course => course._id !== action.payload),
+        filterCourses: state.filterCourses.filter(course => course._id !== action.payload),
+      }
+
     default:
       break;
   }

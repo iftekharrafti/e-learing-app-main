@@ -24,6 +24,7 @@ import MyProfile from "../../pages/Dashboard/MyProfile/MyProfile";
 import NoticeDetails from "../../pages/Notices/NoticeDetails/NoticeDetails";
 import CategoryCourse from "../../pages/CategoryCourse/CategoryCourse";
 import ForgotPassword from "../../pages/Register/ForgotPassword";
+import AllCourses from "../../pages/Dashboard/AllCourses/AllCourses";
 
 const router = createBrowserRouter([
     {
@@ -115,6 +116,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/addCourse',
                 element: <AdminRoute><AddCourse /></AdminRoute> 
+            },
+            {
+                path: '/dashboard/allCourses',
+                element: <AdminRoute><AllCourses /></AdminRoute> 
             },
             {
                 path: '/dashboard/allUsers',
