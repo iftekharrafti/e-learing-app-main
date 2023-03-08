@@ -89,10 +89,11 @@ const Courses = () => {
           <Row>
             <Col lg={3} md={4} className="mb-4">
               <h3>Category</h3>
-
+              {/* Map the unique category */}
               {newUniqueList.map((category, index) => (
                 <div className="d-flex align-items-center">
               <input onChange={() =>handleCategory(category)} type="radio" name="category" id={category} style={{width: '25px', height: '25px'}} />
+
               <label for={category} style={{fontSize: '22px', fontWeight: 'bold', marginLeft: '10px'}}>{category}</label>
               </div>
               ))}
