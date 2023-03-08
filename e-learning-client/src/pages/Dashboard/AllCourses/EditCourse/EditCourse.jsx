@@ -25,9 +25,7 @@ function EditCourse(props) {
   const [description, setDescription] = useState(course.description);
 
   const {
-    register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
 
   const handleEditDataSubmit = () => {
@@ -75,15 +73,10 @@ function EditCourse(props) {
                 className="remove-focus"
                 size="lg"
                 type="text"
-                {...register("title", { required: true })}
-                value={course.title}
+                defaultValue={course.title}
                 onChange={(e) => setTitle(e.target.value)}
                 disabled={false}
-                readonly="false"
               />
-              {errors.title && (
-                <span className="text-danger">This field is required</span>
-              )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicLastName">
@@ -92,15 +85,9 @@ function EditCourse(props) {
                 className="remove-focus"
                 size="lg"
                 type="text"
-                {...register("price", {
-                  required: true,
-                })}
-                value={course.price}
+                defaultValue={course.price}
                 onChange={(e) => setPrice(e.target.value)}
               />
-              {errors.price && (
-                <span className="text-danger">This field is required</span>
-              )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -109,15 +96,9 @@ function EditCourse(props) {
                 className="remove-focus"
                 size="lg"
                 type="text"
-                {...register("category", {
-                  required: true,
-                })}
-                value={course.category}
+                defaultValue={course.category}
                 onChange={(e) => setCategory(e.target.value)}
               />
-              {errors.category && (
-                <span className="text-danger">This field is required</span>
-              )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -126,15 +107,9 @@ function EditCourse(props) {
                 className="remove-focus"
                 size="lg"
                 type="text"
-                {...register("rating", {
-                  required: true,
-                })}
-                value={course.rating}
+                defaultValue={course.rating}
                 onChange={(e) => setRating(e.target.value)}
               />
-              {errors.rating && (
-                <span className="text-danger">This field is required</span>
-              )}
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -153,16 +128,10 @@ function EditCourse(props) {
                 className="remove-focus"
                 as="textarea"
                 rows={5}
-                {...register("description", {
-                  required: true,
-                })}
-                value={course.description}
+                defaultValue={course.description}
                 onChange={(e) => setDescription(e.target.value)}
                 style={{ resize: "none" }}
               />
-              {errors.description && (
-                <span className="text-danger">This field is required</span>
-              )}
             </Form.Group>
 
             <Button

@@ -97,6 +97,7 @@ const AllCourses = () => {
           <EditCourse show={modalShow} onHide={() => setModalShow(false)} editId={editId} />
         </tbody>
       </Table>
+      <Button variant="primary">Add Course</Button>
     </div>
   );
 };
