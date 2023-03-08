@@ -25,6 +25,9 @@ import NoticeDetails from "../../pages/Notices/NoticeDetails/NoticeDetails";
 import CategoryCourse from "../../pages/CategoryCourse/CategoryCourse";
 import ForgotPassword from "../../pages/Register/ForgotPassword";
 import AllCourses from "../../pages/Dashboard/AllCourses/AllCourses";
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 const router = createBrowserRouter([
     {
@@ -130,3 +133,4 @@ const router = createBrowserRouter([
 ])
 
 export default router;
+
